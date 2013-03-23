@@ -6,6 +6,7 @@ task :install do
 
   install_janus
   install_oh_my_zsh
+  switch_to_zsh
 
   files = Dir['*'] - %w[Rakefile README.md]
   files.each do |file|
@@ -73,6 +74,23 @@ def install_oh_my_zsh
       exit
     else
       puts "skipping oh-my-zsh, you will need to change ~/.zshrc"
+    end
+  end
+end
+
+def switch_to_zsh
+  if ENV["SHELL"] =~ /zsh/
+    puts "using zsh"
+  else
+    print "switch to zsh? (recommended) [ynq] "
+    case $stdin.gets.chomp
+    when 'y'
+      puts "switching to zsh"
+      system %Q{chsh -s `which zsh`}
+    when 'q'
+      exit
+    else
+      puts "skipping zsh"
     end
   end
 end
