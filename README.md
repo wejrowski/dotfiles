@@ -3,6 +3,13 @@
 Rake install and you've got my setup. I keep general shortcuts and settings in my 
 .zshrc, and specific personal shortcuts in my .bash_profile
 
+*Macvim* install using
+
+```terminal
+brew install macvim --override-system-vim
+```
+
+
 ## Resources
 
 * https://github.com/ryanb/dotfiles
