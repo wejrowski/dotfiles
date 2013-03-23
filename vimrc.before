@@ -1,0 +1,14 @@
+let mapleader = " "
+
+"" Add nerdtree to persist across tabs
+let NERDTreeShowHidden=1
+autocmd VimEnter * NERDTree
+autocmd BufWinEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
+
+"" Load multiple files with single command
+"" found here: http://vim.wikia.com/wiki/Load_multiple_files_with_a_single_command 
+"" (I'm actually not sure if this does much.. because I can do 
+""   folder/*/file.xyz -p
+"" to open in multiple tabs
+com! -complete=file -nargs=* Edit silent! exec "!vim --servername " . v:servername . " --remote-silent <args>"
