@@ -3,11 +3,18 @@
 Rake install and you've got my setup. I keep general shortcuts and settings in my 
 .zshrc, and specific personal shortcuts in my .bash_profile
 
-*Macvim* install using
+## Other necessities
+**Macvim** install using
 
 ```terminal
-brew install macvim --override-system-vim
+$ brew install macvim --override-system-vim
 ```
+
+**Hub** https://github.com/defunkt/hub
+```terminal
+$ brew install hub
+```
+
 
 
 ## Resources
