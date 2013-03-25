@@ -1,10 +1,13 @@
 # Brent's dotfiles
 
-Rake install and you've got my setup. I keep general shortcuts and settings in my 
-.zshrc, and specific personal shortcuts in my .bash_profile
+Rake install and you've got my VIM and bash setup. I keep general shortcuts and settings in my 
+.zshrc, and specific personal shortcuts outside the repo in my ~/.bash_profile
 
 ## Other necessities
-**Macvim** install using
+
+**Homebrew** http://mxcl.github.com/homebrew/
+
+**Macvim** brew install (gives me the mvim command)
 
 ```terminal
 $ brew install macvim --override-system-vim
