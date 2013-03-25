@@ -33,6 +33,14 @@ alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias rvmcur="rvm info | grep GEM_HOME"
 
+# GIT
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gd='git diff'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gb='git branch'
+
 # RUBY MAGIC
 alias irb='irb --readline -r irb/completion -rubygems' # use readline, completion and require rubygems by default for irb
 
@@ -45,3 +53,4 @@ function cdgem {
 # Open current dir in Coda.. or open given file
 alias opencoda='osascript -e "tell application \"Coda\"" -e "tell document 1" -e "change local path \"${PWD}\"" -e "end tell" -e "end tell"'
 function coda() {  osascript -e "tell application \"Coda\"" -e "tell document 1" -e "open \"${PWD}/$@\"" -e "end tell" -e "end tell";}
+
