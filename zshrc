@@ -54,3 +54,6 @@ function cdgem {
 alias opencoda='osascript -e "tell application \"Coda\"" -e "tell document 1" -e "change local path \"${PWD}\"" -e "end tell" -e "end tell"'
 function coda() {  osascript -e "tell application \"Coda\"" -e "tell document 1" -e "open \"${PWD}/$@\"" -e "end tell" -e "end tell";}
 
+#BROWSERS
+alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
+alias ff="/usr/bin/open -a '/Applications/FireFox.app'"
