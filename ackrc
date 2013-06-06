@@ -1,0 +1,10 @@
+--type-add=js=.ejs,.js,.coffee,.json
+--type-add=ruby=.erb
+--type-add=css=.sass,.css,.scss
+--type-add=ruby=.feature
+--type-add=misc=Gemfile,.yml,
+
+# Searching all just use Ack -a
+# ignoring.. not working...
+#--type-set=IGNORE=.log
+#--noIGNORE
