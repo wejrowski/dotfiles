@@ -2,12 +2,20 @@ require 'rake'
 
 desc "symlink dot files into home directory"
 task :install do
-  replace_all = false
-
   install_janus
   install_oh_my_zsh
   switch_to_zsh
+  install_bash_completion
+  relink_files
+end
 
+desc "relink main dotfiles"
+task :relink do
+  relink_files
+end
+
+def relink_files
+  replace_all = false
   files = Dir['*'] - %w[Rakefile README.md]
   files.each do |file|
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
@@ -42,6 +50,16 @@ end
 def link_file(file)
   puts "linking ~/.#{file}"
   system "ln -s $PWD/#{file} $HOME/.#{file}"
+end
+
+def install_bash_completion
+    case $stdin.gets.chomp
+    when 'y'
+      puts "installing bash-completion"
+      system %Q{brew install bash-completion}
+    else
+      exit
+    end
 end
 
 def install_janus
