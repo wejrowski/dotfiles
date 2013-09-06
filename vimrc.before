@@ -4,7 +4,7 @@ let mapleader = " "
 let NERDTreeShowHidden=1
 autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
-autocmd VimEnter * wincmd w
+""autocmd VimEnter * wincmd w ""Auto go to the new file window
 
 "" Load multiple files with single command
 "" found here: http://vim.wikia.com/wiki/Load_multiple_files_with_a_single_command 
@@ -12,3 +12,6 @@ autocmd VimEnter * wincmd w
 ""   folder/*/file.xyz -p
 "" to open in multiple tabs
 com! -complete=file -nargs=* Edit silent! exec "!vim --servername " . v:servername . " --remote-silent <args>"
+
+set splitbelow
+set splitright

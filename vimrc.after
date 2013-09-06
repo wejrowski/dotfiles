@@ -13,3 +13,5 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
 
+
+"set lines=73 columns=230

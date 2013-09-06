@@ -1,0 +1,5 @@
+http://railscasts.com/episodes/309-a-shell-scripting-story
+if I make this.. put it in my folder in .oh-my-zsh/custom/plugins/brentw/_git
+
+#compdef git
+compadd spec secret foo bar

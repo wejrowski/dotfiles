@@ -59,7 +59,6 @@ alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias ff="/usr/bin/open -a '/Applications/FireFox.app'"
 
 # brew install bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  #. $(brew --prefix)/etc/bash_completion
+#fi

@@ -1,5 +1,6 @@
 require 'rake'
 
+#https://github.com/zsh-users/zsh-completions
 desc "symlink dot files into home directory"
 task :install do
   install_janus
@@ -50,16 +51,6 @@ end
 def link_file(file)
   puts "linking ~/.#{file}"
   system "ln -s $PWD/#{file} $HOME/.#{file}"
-end
-
-def install_bash_completion
-    case $stdin.gets.chomp
-    when 'y'
-      puts "installing bash-completion"
-      system %Q{brew install bash-completion}
-    else
-      exit
-    end
 end
 
 def install_janus
