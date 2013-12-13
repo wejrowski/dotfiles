@@ -13,5 +13,7 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
 
-
+" If you want to default vim size (not good for actually using vim in terminal
+" though.. annoyingly resizes
 "set lines=73 columns=230
+

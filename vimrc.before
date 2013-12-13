@@ -2,8 +2,10 @@ let mapleader = " "
 
 "" Add nerdtree to persist across tabs
 let NERDTreeShowHidden=1
-autocmd VimEnter * NERDTree
-autocmd BufWinEnter * NERDTreeMirror
+"" Auto start nerdtree on load
+""autocmd VimEnter * NERDTree
+""autocmd BufWinEnter * NERDTreeMirror
+
 ""autocmd VimEnter * wincmd w ""Auto go to the new file window
 
 "" Load multiple files with single command
