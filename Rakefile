@@ -6,7 +6,6 @@ task :install do
   install_janus
   install_oh_my_zsh
   switch_to_zsh
-  install_bash_completion
   relink_files
 end
 
