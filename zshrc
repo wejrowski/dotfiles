@@ -29,7 +29,7 @@ alias ebash="mvim ~/.bash_profile" # I keep my personal shortcuts here
 alias ..='cd ..'       # move up 1 dir
 alias ...='cd ../..'   # move up 2 dirs
 
-alias server="ruby -run -e httpd . -p 5000"
+alias server="echo 'ruby -run -e httpd . -p 5000'; ruby -run -e httpd . -p 5000"
 
 alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
