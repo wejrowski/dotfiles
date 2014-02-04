@@ -42,6 +42,8 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
+alias gs='git status'
+alias gl='git log'
 
 # RUBY MAGIC
 alias irb='irb --readline -r irb/completion -rubygems' # use readline, completion and require rubygems by default for irb
