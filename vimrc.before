@@ -61,3 +61,21 @@ function MergeRight()
   execute "buffer" bufferName
 
 endfunction
+
+function MoveTabRight()
+  if tabpagenr() == tabpagenr("$")
+    let moveTabs = (tabpagenr("$")-1)
+    execute "tabm -" . moveTabs
+  else
+    execute "tabm +1"
+  endif
+endfunction
+
+function MoveTabLeft()
+  if tabpagenr() == 1
+    let moveTabs = (tabpagenr("$")-1)
+    execute "tabm +" . moveTabs
+  else
+    execute "tabm -1"
+  endif
+endfunction
