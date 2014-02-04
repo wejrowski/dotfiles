@@ -27,8 +27,21 @@ $ brew install hub
 * http://railscasts.com/episodes/308-oh-my-zsh
  
 
-**Alfred**
-* http://www.alfredapp.com
-* https://github.com/gharlan/alfred-github-workflow
-* https://github.com/willfarrell/alfred-dash-workflow
-* http://7h2o.com/index.php/posts/stackoverflow-alfred-workflow
+**Apps**
+* **Omnifocus**
+  * GTD: http://en.wikipedia.org/wiki/Getting_Things_Done
+* **OmniGraffle** http://www.omnigroup.com/omnifocus
+  * MindMaps: http://www.amazon.com/Use-Both-Sides-Your-Brain/dp/0452266033 
+* **Evernote** http://evernote.com
+* **HipChat** https://www.hipchat.com
+* **Alfred** http://www.alfredapp.com
+  * https://github.com/gharlan/alfred-github-workflow
+  * https://github.com/willfarrell/alfred-dash-workflow
+  * http://7h2o.com/index.php/posts/stackoverflow-alfred-workflow
+* **Dash** http://kapeli.com/dash
+* **LiveReload** http://livereload.com
+* **Tower** http://www.git-tower.com
+* **Transmit** https://panic.com/transmit
+* **CyberDuck** http://cyberduck.io
+* **SequelPro** http://www.sequelpro.com
+* **MAMP** http://http://www.mamp.info
