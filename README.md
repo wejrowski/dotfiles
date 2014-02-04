@@ -25,3 +25,10 @@ $ brew install hub
 * https://github.com/ryanb/dotfiles
 * http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/
 * http://railscasts.com/episodes/308-oh-my-zsh
+ 
+
+**Alfred**
+* http://www.alfredapp.com
+* https://github.com/gharlan/alfred-github-workflow
+* https://github.com/willfarrell/alfred-dash-workflow
+* http://7h2o.com/index.php/posts/stackoverflow-alfred-workflow
