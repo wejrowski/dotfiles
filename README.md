@@ -28,9 +28,9 @@ $ brew install hub
  
 
 **Apps**
-* **Omnifocus**
+* **Omnifocus** http://www.omnigroup.com/omnifocus
   * GTD: http://en.wikipedia.org/wiki/Getting_Things_Done
-* **OmniGraffle** http://www.omnigroup.com/omnifocus
+* **OmniGraffle** http://www.omnigroup.com/omnigraffle
   * MindMaps: http://www.amazon.com/Use-Both-Sides-Your-Brain/dp/0452266033 
 * **Evernote** http://evernote.com
 * **HipChat** https://www.hipchat.com
