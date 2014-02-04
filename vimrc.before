@@ -80,3 +80,9 @@ function MoveTabLeft()
     execute "tabm -1"
   endif
 endfunction
+
+"" for vim-textobj-rubyblock
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
