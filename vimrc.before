@@ -17,3 +17,26 @@ com! -complete=file -nargs=* Edit silent! exec "!vim --servername " . v:serverna
 
 set splitbelow
 set splitright
+
+
+
+"" Merge a tab into a split in the previous window
+function MergeLeft()
+  "" Tab pages are not zero index
+  if tabpagenr() == 1
+    return
+  endif
+
+  let bufferName = bufname("%")
+  if tabpagenr("$") == tabpagenr()
+    close!
+  else
+    close!
+    tabprev
+  endif
+
+  split
+
+  buffer bufferName
+
+endfunction
