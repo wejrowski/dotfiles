@@ -18,6 +18,7 @@ com! -complete=file -nargs=* Edit silent! exec "!vim --servername " . v:serverna
 set splitbelow
 set splitright
 
+set relativenumber
 
 
 "" Merge a tab into a split in the previous tab
