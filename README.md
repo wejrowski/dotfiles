@@ -1,7 +1,7 @@
 # Brent's dotfiles
 
 Rake install and you've got my VIM and bash setup. I keep general shortcuts and settings in my 
-.zshrc, and specific personal shortcuts outside the repo in my ~/.bash_profile
+.zshrc, and specific computer/personal shortcuts outside the repo in my ~/.bash_profile
 
 ## Other necessities
 
