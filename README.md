@@ -44,4 +44,4 @@ $ brew install hub
 * **Transmit** https://panic.com/transmit
 * **CyberDuck** http://cyberduck.io
 * **SequelPro** http://www.sequelpro.com
-* **MAMP** http://http://www.mamp.info
+* **MAMP** http://www.mamp.info
