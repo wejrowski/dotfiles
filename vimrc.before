@@ -40,3 +40,24 @@ function MergeLeft()
   execute "buffer" bufferName
 
 endfunction
+
+"" Merge a tab into a split in the next tab
+function MergeRight()
+  "" Tab pages are not zero index
+  if tabpagenr() == tabpagenr("$")
+    return
+  endif
+
+  let bufferName = bufname("%")
+  if tabpagenr("$") == 1
+    close!
+  else
+    close!
+    tabN
+  endif
+
+  split
+
+  execute "buffer" bufferName
+
+endfunction
