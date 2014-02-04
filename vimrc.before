@@ -20,7 +20,7 @@ set splitright
 
 
 
-"" Merge a tab into a split in the previous window
+"" Merge a tab into a split in the previous tab
 function MergeLeft()
   "" Tab pages are not zero index
   if tabpagenr() == 1
@@ -37,6 +37,6 @@ function MergeLeft()
 
   split
 
-  buffer bufferName
+  execute "buffer" bufferName
 
 endfunction
