@@ -66,3 +66,22 @@ alias ff="/usr/bin/open -a '/Applications/FireFox.app'"
 #if [ -f $(brew --prefix)/etc/bash_completion ]; then
   #. $(brew --prefix)/etc/bash_completion
 #fi
+
+# GIT cleaning
+function filter_wanted_branches {
+  cat $@ | grep -v "master$" | grep -v "release$" | grep -v "patch$"
+}
+function merged_local {
+  git branch --merged | filter_wanted_branches
+}
+function merged_remote {
+  git branch -r --merged | filter_wanted_branches
+}
+function clean_merged {
+  echo "Deleting local..."
+  merged_local | xargs git branch -d
+  echo "Pruning..."
+  git remote prune origin
+  echo "Deleting remote..."
+  merged_remote | grep "origin\/" | sed "s/ *origin\///" | xargs git push origin --delete
+}
