@@ -26,7 +26,7 @@ map <leader>a :Ack<space>
 Bundle 'schickling/vim-bufonly'
 Bundle 'tpope/vim-commentary'
 Bundle 'kana/vim-textobj-user'
-
+Bundle 'tmhedberg/matchit'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 set nocompatible
 if has("autocmd")
