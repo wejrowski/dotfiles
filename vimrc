@@ -1,15 +1,30 @@
+let mapleader = " "
+
+
+"" VUNDLE
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-
-"" VUNDLE
 Bundle 'gmarik/vundle'
 "" MY VUNDLES
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'brettof86/vim-codeschool'
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'tyok/nerdtree-ack'
+"" Add nerdtree to persist across tabs
+let NERDTreeShowHidden=1
+"" Auto start nerdtree on load
+""autocmd VimEnter * NERDTree
+""autocmd BufWinEnter * NERDTreeMirror
+""autocmd VimEnter * wincmd w ""Auto go to the new file window
+nmap <leader>n :NERDTreeToggle<CR>
+" NERDTreeHighlightCursorline=1
+let NERDTreeIgnore = ['.DS_STORE']
+
+let g:NERDTreeWinPos = "left"
+
 Bundle 'schickling/vim-bufonly'
 Bundle 'tpope/vim-commentary'
 Bundle 'kana/vim-textobj-user'
@@ -21,26 +36,18 @@ if has("autocmd")
 endif
 
 Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
 
 
 filetype plugin indent on
 
-let mapleader = " "
+
 color codeschool
-
-"" Add nerdtree to persist across tabs
-let NERDTreeShowHidden=1
-"" Auto start nerdtree on load
-""autocmd VimEnter * NERDTree
-""autocmd BufWinEnter * NERDTreeMirror
-""autocmd VimEnter * wincmd w ""Auto go to the new file window
-
 set splitbelow
 set splitright
 set relativenumber
 
-set guifont=Panic Sans:h12 " Monaco:h12
-let g:NERDTreeWinPos = "left"
+set guifont=Panic\ Sans:h12 " Monaco:h12
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
@@ -50,6 +57,7 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 "" Tab navigation -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
 map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
+
 
 "" Merge a tab into a split in the previous tab
 function MergeLeft()
@@ -109,6 +117,3 @@ endfunction
 
 map <Leader>h :call MoveTabLeft()<CR>
 map <Leader>l :call MoveTabRight()<CR>
-
-" for default window size
-"set lines=73 columns=230
