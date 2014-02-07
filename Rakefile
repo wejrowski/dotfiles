@@ -7,6 +7,7 @@ task :install do
   install_oh_my_zsh
   switch_to_zsh
   relink_files
+  set_gitignore_global
 end
 
 desc "relink main dotfiles"
@@ -100,5 +101,29 @@ def switch_to_zsh
     else
       puts "skipping zsh"
     end
+  end
+end
+
+task :gignore do
+  set_gitignore_global
+end
+
+def set_gitignore_global
+  file = File.join(ENV['HOME'], ".gitignore_global")
+  if File.exist?(file)
+    if `git config --global core.excludesfile` == ""
+      `git config --global core.excludesfile #{file}`
+      puts "gitignore_global SET"
+    else
+      puts "Global gitignore already set"
+    end
+  end
+end
+def remove_gitignore_global
+ `git config --global --unset core.excludesfile`
+  if `git config --global core.excludesfile` == ""
+    puts "Successfully removed global gitignore"
+  else
+    puts "UNSUCCESSFUL"
   end
 end
