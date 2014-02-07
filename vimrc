@@ -1,29 +1,26 @@
 let mapleader = " "
 
+"------------------------------------------
+"- VUNDLE & PLUGIN SETTINGS ---------------
 
-"" VUNDLE
+" :BundleInstall  - install vundles
+" see :h vundle for details
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
-"" MY VUNDLES
+
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'brettof86/vim-codeschool'
 
 Bundle 'tyok/nerdtree-ack'
 nnoremap <D-S-F> :Ack<space> " Not working
-"" Add nerdtree to persist across tabs
+
 Bundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
-"" Auto start nerdtree on load
-""autocmd VimEnter * NERDTree
-""autocmd BufWinEnter * NERDTreeMirror
-""autocmd VimEnter * wincmd w ""Auto go to the new file window
 nmap <leader>n :NERDTreeToggle<CR>
-" NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['.DS_STORE']
-
 let g:NERDTreeWinPos = "left"
 
 Bundle 'schickling/vim-bufonly'
@@ -43,8 +40,11 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'taylor/vim-zoomwin'
 
-filetype plugin indent on
+filetype plugin indent on " Required for vundle
 
+
+"------------------------------------------
+"- SETTINGS -------------------------------
 
 color codeschool
 set splitbelow
@@ -62,6 +62,9 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
 
+
+"------------------------------------------
+"- CUSTOM FUNCTIONS -----------------------
 
 "" Merge a tab into a split in the previous tab
 function MergeLeft()
