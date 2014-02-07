@@ -37,6 +37,7 @@ endif
 
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-rails'
 
 
 filetype plugin indent on
