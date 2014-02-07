@@ -11,10 +11,10 @@ Bundle 'gmarik/vundle'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'brettof86/vim-codeschool'
 
-Bundle 'scrooloose/nerdtree'
 Bundle 'tyok/nerdtree-ack'
 nnoremap <D-S-F> :Ack<space> " Not working
 "" Add nerdtree to persist across tabs
+Bundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 "" Auto start nerdtree on load
 ""autocmd VimEnter * NERDTree
