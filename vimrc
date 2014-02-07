@@ -1,14 +1,22 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
 
 "" VUNDLE
+Bundle 'gmarik/vundle'
+"" MY VUNDLES
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'brettof86/vim-codeschool'
+Bundle 'scrooloose/nerdtree'
 Bundle 'tyok/nerdtree-ack'
-Bundle 'plugin/'
 Bundle 'schickling/vim-bufonly'
 Bundle 'tpope/vim-commentary'
-Bundle 'vim-textobj-rubyblock/'
-Bundle 'vim-textobj-user/'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'scrooloose/syntastic'
 
+filetype plugin indent on
 
 """""""""""""""
 "" .VIMRC.BEFORE
