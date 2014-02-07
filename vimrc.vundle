@@ -1,8 +1,0 @@
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'brettof86/vim-codeschool'
-Bundle 'tyok/nerdtree-ack'
-Bundle 'plugin/'
-Bundle 'schickling/vim-bufonly'
-Bundle 'tpope/vim-commentary'
-Bundle 'vim-textobj-rubyblock/'
-Bundle 'vim-textobj-user/'

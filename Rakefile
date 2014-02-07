@@ -3,7 +3,6 @@ require 'rake'
 #https://github.com/zsh-users/zsh-completions
 desc "symlink dot files into home directory"
 task :install do
-  install_janus
   install_oh_my_zsh
   switch_to_zsh
   relink_files
@@ -51,23 +50,6 @@ end
 def link_file(file)
   puts "linking ~/.#{file}"
   system "ln -s $PWD/#{file} $HOME/.#{file}"
-end
-
-def install_janus
-  if File.exist?(File.join(ENV['HOME'], ".vim"))
-    puts "skipping Janus install -- you already have a ~/.vim directory"
-  else
-    print "install janus? [ynq] "
-    case $stdin.gets.chomp
-    when 'y'
-      puts "installing Janus"
-      system %Q{ curl -Lo- https://bit.ly/janus-bootstrap | bash } #https://github.com/carlhuda/janus
-    when 'q'
-      exit
-    else
-      puts "skipping Janus .vim installation"
-    end
-  end
 end
 
 def install_oh_my_zsh

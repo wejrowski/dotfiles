@@ -1,3 +1,17 @@
+
+"" VUNDLE
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'brettof86/vim-codeschool'
+Bundle 'tyok/nerdtree-ack'
+Bundle 'plugin/'
+Bundle 'schickling/vim-bufonly'
+Bundle 'tpope/vim-commentary'
+Bundle 'vim-textobj-rubyblock/'
+Bundle 'vim-textobj-user/'
+
+
+"""""""""""""""
+"" .VIMRC.BEFORE
 let mapleader = " "
 
 "" Add nerdtree to persist across tabs
@@ -86,3 +100,35 @@ set nocompatible
 if has("autocmd")
   filetype indent plugin on
 endif
+
+"""""""""""""""
+"" .VIMRC.AFTER
+
+color codeschool
+set guifont=Monaco:h12
+let g:NERDTreeWinPos = "left"
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set go-=L " Removes left hand scroll bar
+autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
+:set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
+
+"" Tab navigation -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
+map <D-H> :tabp<CR>
+map <D-L> :tabn<CR>
+
+
+map <Leader>h :call MoveTabLeft()<CR>
+map <Leader>l :call MoveTabRight()<CR>
+""Not working for some reason:
+""map <A-{> :call MoveTabLeft()<CR>
+""map <A-}> :call MoveTabRight()<CR>
+""map <A-H> :call MoveTabLeft()<CR>
+""map <A-L> :call MoveTabRight()<CR>
+
+
+" If you want to default vim size (not good for actually using vim in terminal
+" though.. annoyingly resizes
+"set lines=73 columns=230
+
+
