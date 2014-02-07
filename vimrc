@@ -59,6 +59,7 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 set list
 set listchars=trail:.
 
+map <leader>c gcc
 
 "" Tab navigation -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
 map <D-H> :tabp<CR>
