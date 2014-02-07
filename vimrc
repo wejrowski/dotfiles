@@ -20,8 +20,18 @@ nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
 let g:NERDTreeWinPos = "left"
 
-Bundle 'tyok/nerdtree-ack'
+Bundle 'mileszs/ack.vim'
 map <leader>a :Ack<space>
+map <D-F> :Ack<space>
+if executable("ack")
+  " use default config
+elseif executable("ack-grep")
+  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+elseif executable("ag")
+  let g:ackprg="ag --nocolor --nogroup --column"
+else
+  echo "The ack program is not installed"
+endif
 
 Bundle 'schickling/vim-bufonly'
 Bundle 'tpope/vim-commentary'
