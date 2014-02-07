@@ -38,7 +38,9 @@ endif
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-rails'
-
+Bundle 'tpope/vim-fugitive'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'taylor/vim-zoomwin'
 
 filetype plugin indent on
 
