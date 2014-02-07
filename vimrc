@@ -14,14 +14,15 @@ Bundle 'gmarik/vundle'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'brettof86/vim-codeschool'
 
-Bundle 'tyok/nerdtree-ack'
-map <leader>a :Ack<space>
-
 Bundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
 let g:NERDTreeWinPos = "left"
+
+Bundle 'tyok/nerdtree-ack'
+map <leader>a :Ack<space>
+
 
 Bundle 'schickling/vim-bufonly'
 Bundle 'tpope/vim-commentary'
