@@ -23,7 +23,6 @@ let g:NERDTreeWinPos = "left"
 Bundle 'tyok/nerdtree-ack'
 map <leader>a :Ack<space>
 
-
 Bundle 'schickling/vim-bufonly'
 Bundle 'tpope/vim-commentary'
 Bundle 'kana/vim-textobj-user'
