@@ -58,6 +58,8 @@ set go-=L " Removes left hand scroll bar
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 set list
 set listchars=trail:.
+set expandtab
+set tabstop=2
 
 map <leader>c gcc
 
