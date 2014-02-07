@@ -15,7 +15,7 @@ Bundle 'jlanzarotta/bufexplorer'
 Bundle 'brettof86/vim-codeschool'
 
 Bundle 'tyok/nerdtree-ack'
-nnoremap <D-S-F> :Ack<space> " Not working
+map <leader>a :Ack<space>
 
 Bundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
