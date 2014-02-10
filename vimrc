@@ -60,6 +60,7 @@ color codeschool
 set splitbelow
 set splitright
 set relativenumber
+set number
 
 set guifont=Panic\ Sans:h12 " Monaco:h12
 set guioptions-=T " Removes top toolbar
