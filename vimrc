@@ -50,6 +50,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'taylor/vim-zoomwin'
 
+" Make sure to read YCM installation instructions
+Bundle 'Valloric/YouCompleteMe'
+
 filetype plugin indent on " Required for vundle
 
 
