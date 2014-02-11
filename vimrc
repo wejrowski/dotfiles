@@ -74,6 +74,10 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set ruler
+set incsearch
+set hlsearch
+" Clear search underlines
+nnoremap <leader>s :nohlsearch
 
 map <leader>c gcc
 
