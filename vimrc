@@ -148,5 +148,5 @@ function MoveTabLeft()
   endif
 endfunction
 
-map <Leader>h :call MoveTabLeft()<CR>
-map <Leader>l :call MoveTabRight()<CR>
+nnoremap <C-h> :call MoveTabLeft()<CR>
+nnoremap <C-l> :call MoveTabRight()<CR>
