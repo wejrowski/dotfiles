@@ -53,6 +53,7 @@ Bundle 'taylor/vim-zoomwin'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-endwise'
 Bundle 'janx/vim-rubytest'
+Bundle 'vim-ruby/vim-ruby'
 
 filetype plugin indent on " Required for vundle
 
