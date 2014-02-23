@@ -86,6 +86,10 @@ nnoremap <leader>s :nohlsearch
 
 map <leader>c gcc
 
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown map j gj
+autocmd FileType markdown map k gk
+
 "" Tab navigation -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
 map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
