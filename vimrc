@@ -89,6 +89,9 @@ map <leader>c gcc
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown map j gj
 autocmd FileType markdown map k gk
+" Use liquid highlighting in jekyll
+au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
+
 
 "" Tab navigation -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
 map <D-H> :tabp<CR>
