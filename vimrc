@@ -55,6 +55,10 @@ Bundle 'tpope/vim-endwise'
 Bundle 'janx/vim-rubytest'
 Bundle 'vim-ruby/vim-ruby'
 
+Bundle 'ap/vim-css-color'
+Bundle 'tpope/vim-haml'
+au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
+
 filetype plugin indent on " Required for vundle
 
 
