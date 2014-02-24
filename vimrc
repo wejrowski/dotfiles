@@ -59,6 +59,9 @@ Bundle 'ap/vim-css-color'
 Bundle 'tpope/vim-haml'
 au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
 
+Bundle 'kchmck/vim-coffee-script'
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+
 filetype plugin indent on " Required for vundle
 
 
