@@ -45,6 +45,8 @@ endif
 
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
+" make sure to brew install ctags
+Bundle 'vim-scripts/ctags.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
