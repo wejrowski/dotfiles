@@ -93,6 +93,9 @@ end
 def setup_git
 
   `git config --global color.ui true`
+  # `chmod u+x ~/.git_template/hooks/post-checkout`
+  # `chmod u+x ~/.git_template/hooks/ctags`
+  `git config --global init.templatedir '~/.git_template'`
 
   # Gitignore global
   file = File.join(ENV['HOME'], ".gitignore_global")
