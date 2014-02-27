@@ -18,6 +18,10 @@ $ brew install macvim --override-system-vim
 $ brew install hub
 ```
 
+**ctags**
+```terminal
+$ brew install ctags
+```
 
 
 ## Resources
