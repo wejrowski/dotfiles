@@ -102,6 +102,10 @@ autocmd FileType markdown setlocal spell
 autocmd FileType markdown map j gj
 autocmd FileType markdown map k gk
 autocmd FileType markdown set commentstring=<!--%s-->
+autocmd FileType markdown set wrap
+autocmd FileType markdown set linebreak
+autocmd FileType markdown set nolist
+autocmd FileType markdown set ignorecase
 
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
