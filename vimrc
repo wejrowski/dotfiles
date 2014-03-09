@@ -64,6 +64,9 @@ au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssCol
 Bundle 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
+" Marker visuals
+Bundle 'kshenoy/vim-signature'
+
 filetype plugin indent on " Required for vundle
 
 
@@ -99,6 +102,7 @@ autocmd FileType markdown setlocal spell
 autocmd FileType markdown map j gj
 autocmd FileType markdown map k gk
 autocmd FileType markdown set commentstring=<!--%s-->
+
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
 
