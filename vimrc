@@ -175,7 +175,7 @@ function MoveTabLeft()
   endif
 endfunction
 
-nnoremap <C-h> :call MoveTabLeft()<CR>
-nnoremap <C-l> :call MoveTabRight()<CR>
-nnoremap <C-H> :call MergeLeft()<CR>
-nnoremap <C-L> :call MergeRight()<CR>
+nnoremap <leader>H :call MoveTabLeft()<CR>
+nnoremap <leader>L :call MoveTabRight()<CR>
+nnoremap <leader><leader>H :call MergeLeft()<CR>
+nnoremap <leader><leader>L :call MergeRight()<CR>
