@@ -50,6 +50,7 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'groenewege/vim-markdown-preview'
 Bundle 'taylor/vim-zoomwin'
 " Make sure to read YCM installation instructions
 Bundle 'Valloric/YouCompleteMe'
