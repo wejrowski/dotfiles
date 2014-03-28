@@ -78,6 +78,13 @@ function clean_merged {
   merged_remote | grep "origin\/" | sed "s/ *origin\///" | xargs git push origin --delete
 }
 
+function curr_branch {
+  git branch | sed -n '/^\*/s/^\* //p'
+}
+function gpr { 
+  echo "git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)"
+  git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)
+}
 
 # MISC UNUSED
 # # vim bash (missing vim necessities.. I don't like it)
