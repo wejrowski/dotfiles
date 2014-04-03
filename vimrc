@@ -58,6 +58,9 @@ Bundle 'tpope/vim-endwise'
 
 Bundle 'thoughtbot/vim-rspec'
 let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
+map <Leader>tt :call RunCurrentSpecFile()<CR>
+map <Leader>ts :call RunNearestSpec()<CR>
+map <Leader>ta :call RunAllSpecs()<CR>
 
 Bundle 'vim-ruby/vim-ruby'
 
