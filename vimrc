@@ -55,7 +55,10 @@ Bundle 'taylor/vim-zoomwin'
 " Make sure to read YCM installation instructions
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-endwise'
-Bundle 'janx/vim-rubytest'
+
+Bundle 'thoughtbot/vim-rspec'
+let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
+
 Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'ap/vim-css-color'
