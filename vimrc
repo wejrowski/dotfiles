@@ -55,6 +55,8 @@ Bundle 'taylor/vim-zoomwin'
 " Make sure to read YCM installation instructions
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-endwise'
+Bundle 'Lokaltog/vim-easymotion'
+map s <Plug>(easymotion-s2)
 
 Bundle 'thoughtbot/vim-rspec'
 let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
