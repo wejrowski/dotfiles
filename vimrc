@@ -3,24 +3,24 @@ let mapleader = " "
 "------------------------------------------
 "- VUNDLE & PLUGIN SETTINGS ---------------
 
-" :BundleInstall  - install vundles
+" :PluginInstall  - install vundles
 " see :h vundle for details
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'brettof86/vim-codeschool'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'brettof86/vim-codeschool'
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
 let g:NERDTreeWinPos = "left"
 
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 map <leader>a :Ack<space>
 map <D-F> :Ack<space>
 if executable("ack")
@@ -33,49 +33,49 @@ else
   echo "The ack program is not installed"
 endif
 
-Bundle 'schickling/vim-bufonly'
-Bundle 'tpope/vim-commentary'
-Bundle 'kana/vim-textobj-user'
-Bundle 'tmhedberg/matchit'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'schickling/vim-bufonly'
+Plugin 'tpope/vim-commentary'
+Plugin 'kana/vim-textobj-user'
+Plugin 'tmhedberg/matchit'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 set nocompatible
 if has("autocmd")
   filetype indent plugin on
 endif
 
-Bundle 'scrooloose/syntastic'
-Bundle 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 " make sure to brew install ctags
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'groenewege/vim-markdown-preview'
-Bundle 'taylor/vim-zoomwin'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'groenewege/vim-markdown-preview'
+Plugin 'taylor/vim-zoomwin'
 " Make sure to read YCM installation instructions
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'tpope/vim-endwise'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-endwise'
+Plugin 'Lokaltog/vim-easymotion'
 map s <Plug>(easymotion-s2)
 
-Bundle 'thoughtbot/vim-rspec'
+Plugin 'thoughtbot/vim-rspec'
 let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
 map <Leader>tt :call RunCurrentSpecFile()<CR>
 map <Leader>ts :call RunNearestSpec()<CR>
 map <Leader>ta :call RunAllSpecs()<CR>
 
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 
-Bundle 'ap/vim-css-color'
-Bundle 'tpope/vim-haml'
+Plugin 'ap/vim-css-color'
+Plugin 'tpope/vim-haml'
 au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
 
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
 " Marker visuals
-Bundle 'kshenoy/vim-signature'
+Plugin 'kshenoy/vim-signature'
 
 filetype plugin indent on " Required for vundle
 
