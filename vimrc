@@ -11,10 +11,14 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Plugin 'gmarik/vundle'
 
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'brettof86/vim-codeschool'
+"------------------------------------------
+"- PLUGINS + PLUGIN SETTINGS --------------
 
+" NAVIGATING
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'schickling/vim-bufonly' "Additional buffer helpers
+Plugin 'jlanzarotta/bufexplorer'
 let NERDTreeShowHidden=1
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
@@ -33,52 +37,45 @@ else
   echo "The ack program is not installed"
 endif
 
-Plugin 'schickling/vim-bufonly'
-Plugin 'tpope/vim-commentary'
-Plugin 'kana/vim-textobj-user'
-Plugin 'tmhedberg/matchit'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-set nocompatible
-if has("autocmd")
-  filetype indent plugin on
-endif
-
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-" make sure to brew install ctags
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'groenewege/vim-markdown-preview'
-Plugin 'taylor/vim-zoomwin'
-" Make sure to read YCM installation instructions
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-endwise'
 Plugin 'Lokaltog/vim-easymotion'
 map s <Plug>(easymotion-s2)
+" make sure to brew install ctags
+Plugin 'vim-scripts/ctags.vim'
 
+" COLORS / SYNTAX HELP
+Plugin 'brettof86/vim-codeschool'
+Plugin 'ap/vim-css-color'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-haml'
+au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
+Plugin 'kchmck/vim-coffee-script'
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+
+" SHORTCUTS/HELPERS
+Plugin 'tpope/vim-commentary'
+map <leader>c gcc
+Plugin 'kana/vim-textobj-user' " vim-textobj-rubyblock dependency
+Plugin 'nelstrom/vim-textobj-rubyblock' " Selecting ruby blocks
+Plugin 'Valloric/YouCompleteMe' " Auto completion - Read YCM installation instructions
+Plugin 'tpope/vim-endwise' " auto end ruby blocks
+Plugin 'groenewege/vim-markdown-preview'
+Plugin 'kshenoy/vim-signature' " Marker visuals
+Plugin 'tpope/vim-fugitive' " GIT - Gblame etc.
+Plugin 'scrooloose/syntastic' " Syntax error help
+Plugin 'tpope/vim-surround' " manipulate surrounding characters
+
+" TESTING
 Plugin 'thoughtbot/vim-rspec'
 let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
 map <Leader>tt :call RunCurrentSpecFile()<CR>
 map <Leader>ts :call RunNearestSpec()<CR>
 map <Leader>ta :call RunAllSpecs()<CR>
 
-Plugin 'vim-ruby/vim-ruby'
-
-Plugin 'ap/vim-css-color'
-Plugin 'tpope/vim-haml'
-au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
-
-Plugin 'kchmck/vim-coffee-script'
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-
-" Marker visuals
-Plugin 'kshenoy/vim-signature'
+" Plugin 'taylor/vim-zoomwin'
 
 filetype plugin indent on " Required for vundle
-
 
 "------------------------------------------
 "- SETTINGS -------------------------------
@@ -106,8 +103,6 @@ set hlsearch
 " Clear search underlines
 nnoremap <leader>s :nohlsearch
 
-map <leader>c gcc
-
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown map j gj
 autocmd FileType markdown map k gk
@@ -120,11 +115,9 @@ autocmd FileType markdown set ignorecase
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
 
-
-"" Tab navigation -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
+"" TAB NAVIGATION -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
 map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
-
 
 "------------------------------------------
 "- CUSTOM FUNCTIONS -----------------------
