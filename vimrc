@@ -4,7 +4,7 @@ let mapleader = " "
 "- VUNDLE & PLUGIN SETTINGS ---------------
 
 " :PluginInstall  - install vundles
-" see :h vundle for details
+" :h vundle - for help
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle
@@ -39,11 +39,12 @@ endif
 
 Plugin 'Lokaltog/vim-easymotion'
 map s <Plug>(easymotion-s2)
-" make sure to brew install ctags
-Plugin 'vim-scripts/ctags.vim'
+
+Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 
 " COLORS / SYNTAX HELP
 Plugin 'brettof86/vim-codeschool'
+color codeschool
 Plugin 'ap/vim-css-color'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -80,12 +81,10 @@ filetype plugin indent on " Required for vundle
 "------------------------------------------
 "- SETTINGS -------------------------------
 
-color codeschool
 set splitbelow
 set splitright
 set relativenumber
 set number
-
 set guifont=Panic\ Sans:h12 " Monaco:h12
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -115,9 +114,16 @@ autocmd FileType markdown set ignorecase
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
 
-"" TAB NAVIGATION -- instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L 
-map <D-H> :tabp<CR>
+" TAB NAVIGATION
+" - To move a split to a tab use ctrl+w T
+" - Move splits around with ctrl+w H/L/J/K
+" Instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L
+map <D-H> :tabp<CR> 
 map <D-L> :tabn<CR>
+nnoremap <leader>H :call MoveTabLeft()<CR>
+nnoremap <leader>L :call MoveTabRight()<CR>
+nnoremap <leader><leader>H :call MergeLeft()<CR>
+nnoremap <leader><leader>L :call MergeRight()<CR>
 
 "------------------------------------------
 "- CUSTOM FUNCTIONS -----------------------
@@ -177,8 +183,3 @@ function MoveTabLeft()
     execute "tabm -1"
   endif
 endfunction
-
-nnoremap <leader>H :call MoveTabLeft()<CR>
-nnoremap <leader>L :call MoveTabRight()<CR>
-nnoremap <leader><leader>H :call MergeLeft()<CR>
-nnoremap <leader><leader>L :call MergeRight()<CR>
