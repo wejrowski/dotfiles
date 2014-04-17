@@ -92,6 +92,8 @@ set go-=L " Removes left hand scroll bar
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 set list
 set listchars=trail:.
+set colorcolumn=80
+set cursorcolumn
 set expandtab
 set tabstop=2
 set softtabstop=2
