@@ -1,6 +1,8 @@
 .DS_STORE
 *.swp
 .swn
+.swm
+.swl
 *.swo
 tmp/
 *.log
