@@ -84,7 +84,7 @@ function clean_merged {
 function curr_branch {
   git branch | sed -n '/^\*/s/^\* //p'
 }
-function gpr { 
+function gpr {
   echo "git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)"
   git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)
 }
