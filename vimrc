@@ -43,8 +43,9 @@ map s <Plug>(easymotion-s2)
 Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 
 " COLORS / SYNTAX HELP
-Plugin 'brettof86/vim-codeschool'
+Plugin 'wejrowski/vim-codeschool'
 color codeschool
+syntax enable "Fixes terminal color issue
 Plugin 'ap/vim-css-color'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
