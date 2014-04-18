@@ -31,6 +31,9 @@ alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias rvmcur="rvm info | grep GEM_HOME"
 
+# vim colors in tmux. c.f. http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
+alias tmux="TERM=screen-256color-bce tmux"
+
 # GIT
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gd='git diff'
