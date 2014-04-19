@@ -186,3 +186,11 @@ function MoveTabLeft()
     execute "tabm -1"
   endif
 endfunction
+
+
+"COLOR ADJUSTMENTS
+highlight ExtraWhitespace ctermfg=red guifg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
