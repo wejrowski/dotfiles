@@ -104,6 +104,7 @@ set incsearch
 set hlsearch
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
+map <leader>w :w<CR>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown map j gj
