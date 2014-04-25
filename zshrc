@@ -30,6 +30,7 @@ alias ...='cd ../..'   # move up 2 dirs
 alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias rvmcur="rvm info | grep GEM_HOME"
+alias rs="rvmsudo rails s -p 80"
 
 # vim colors in tmux. c.f. http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 alias tmux="TERM=screen-256color-bce tmux"
