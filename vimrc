@@ -103,6 +103,7 @@ set shiftwidth=2
 set ruler
 set incsearch
 set hlsearch
+set ignorecase " Ignore case in search
 
 " Default use normal clipboard and
 " don't copy to clipboard when deleting
@@ -120,7 +121,6 @@ autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap
 autocmd FileType markdown set linebreak
 autocmd FileType markdown set nolist
-autocmd FileType markdown set ignorecase
 
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
