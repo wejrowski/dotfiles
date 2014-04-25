@@ -58,15 +58,15 @@ autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 " SHORTCUTS/HELPERS
 Plugin 'tpope/vim-commentary'
 map <leader>c gcc
-Plugin 'kana/vim-textobj-user' " vim-textobj-rubyblock dependency
-Plugin 'nelstrom/vim-textobj-rubyblock' " Selecting ruby blocks
-Plugin 'Valloric/YouCompleteMe' " Auto completion - Read YCM installation instructions
-Plugin 'tpope/vim-endwise' " auto end ruby blocks
+Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
+Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
+Plugin 'Valloric/YouCompleteMe'          " Auto completion - Read YCM installation instructions
+Plugin 'tpope/vim-endwise'               " auto end ruby blocks
 Plugin 'groenewege/vim-markdown-preview'
-Plugin 'kshenoy/vim-signature' " Marker visuals
-Plugin 'tpope/vim-fugitive' " GIT - Gblame etc.
-Plugin 'scrooloose/syntastic' " Syntax error help
-Plugin 'tpope/vim-surround' " manipulate surrounding characters
+Plugin 'kshenoy/vim-signature'           " Marker visuals
+Plugin 'tpope/vim-fugitive'              " GIT - Gblame etc.
+Plugin 'scrooloose/syntastic'            " Syntax error help
+Plugin 'tpope/vim-surround'              " manipulate surrounding characters
 Plugin 'godlygeek/tabular'
 
 " TESTING
