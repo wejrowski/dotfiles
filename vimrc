@@ -103,6 +103,12 @@ set shiftwidth=2
 set ruler
 set incsearch
 set hlsearch
+
+" Default use normal clipboard and
+" don't copy to clipboard when deleting
+set clipboard=unnamed
+nnoremap d "_d
+
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
 map <leader>w :w<CR>
