@@ -67,6 +67,7 @@ Plugin 'kshenoy/vim-signature' " Marker visuals
 Plugin 'tpope/vim-fugitive' " GIT - Gblame etc.
 Plugin 'scrooloose/syntastic' " Syntax error help
 Plugin 'tpope/vim-surround' " manipulate surrounding characters
+Plugin 'godlygeek/tabular'
 
 " TESTING
 Plugin 'thoughtbot/vim-rspec'
@@ -122,8 +123,10 @@ au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
 " - To move a split to a tab use ctrl+w T
 " - Move splits around with ctrl+w H/L/J/K
 " Instead of using ctrl+shift+{} to switch, I like ctrl+shift+H/L
-map <D-H> :tabp<CR> 
+map <D-H> :tabp<CR>
 map <D-L> :tabn<CR>
+map <leader>h :tabp<CR>
+map <leader>l :tabn<CR>
 nnoremap <leader>H :call MoveTabLeft()<CR>
 nnoremap <leader>L :call MoveTabRight()<CR>
 nnoremap <leader><leader>H :call MergeLeft()<CR>
