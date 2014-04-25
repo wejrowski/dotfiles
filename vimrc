@@ -67,7 +67,7 @@ Plugin 'kshenoy/vim-signature'           " Marker visuals
 Plugin 'tpope/vim-fugitive'              " GIT - Gblame etc.
 Plugin 'scrooloose/syntastic'            " Syntax error help
 Plugin 'tpope/vim-surround'              " manipulate surrounding characters
-Plugin 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'               " pretty indents/formatting
 
 " TESTING
 Plugin 'thoughtbot/vim-rspec'
