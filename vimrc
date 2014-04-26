@@ -125,6 +125,32 @@ autocmd FileType markdown set nolist
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
 
+function RenameFile() " via Chris Hunt
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'))
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+nnoremap <leader>nn :call RenameFile()<cr>
+
+function! ExecuteFile(filename) " via Chris Hunt
+  :w
+  :silent !clear
+  if match(a:filename, '\.rb$') != -1
+    exec ":!ruby " . a:filename
+  elseif match(a:filename, '\.js$') != -1
+    exec ":!node " . a:filename
+  elseif match(a:filename, '\.sh$') != -1
+    exec ":!bash " . a:filename
+  else
+    exec ":!echo \"Don't know how to execute: \"" .  a:filename
+  end
+endfunction
+map <leader>e :call ExecuteFile(expand("%"))<cr>
+
 " TAB NAVIGATION
 " - To move a split to a tab use ctrl+w T
 " - Move splits around with ctrl+w H/L/J/K
