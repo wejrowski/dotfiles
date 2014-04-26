@@ -100,11 +100,11 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set ruler      " Show row and col in footer
+set ruler       " Show row and col in footer
 set incsearch
-set hlsearch   " Highlight search matches
-set ignorecase " Ignore case in search
-set backspace=2" Fix vim backspace issue
+set hlsearch    " Highlight search matches
+set ignorecase  " Ignore case in search
+set backspace=2 " Fix vim backspace issue
 
 " Default use normal clipboard and
 set clipboard=unnamed
