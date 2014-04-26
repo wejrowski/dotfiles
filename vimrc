@@ -106,9 +106,9 @@ set hlsearch   " Highlight search matches
 set ignorecase " Ignore case in search
 
 " Default use normal clipboard and
-" don't copy to clipboard when deleting
 set clipboard=unnamed
-nnoremap d "_d
+" don't copy to clipboard when deleting
+" nnoremap d "_d
 
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
