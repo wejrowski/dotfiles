@@ -104,6 +104,7 @@ set ruler      " Show row and col in footer
 set incsearch
 set hlsearch   " Highlight search matches
 set ignorecase " Ignore case in search
+set backspace=2" Fix vim backspace issue
 
 " Default use normal clipboard and
 set clipboard=unnamed
