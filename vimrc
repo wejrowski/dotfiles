@@ -100,9 +100,9 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set ruler
+set ruler      " Show row and col in footer
 set incsearch
-set hlsearch
+set hlsearch   " Highlight search matches
 set ignorecase " Ignore case in search
 
 " Default use normal clipboard and
