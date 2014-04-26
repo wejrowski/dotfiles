@@ -122,6 +122,11 @@ autocmd FileType markdown set wrap
 autocmd FileType markdown set linebreak
 autocmd FileType markdown set nolist
 
+" Git shortcuts
+map <leader>gb :Gblame<cr>
+map <leader>gl :!clear && git log -p %<cr>
+map <leader>gd :!clear && git diff %<cr>
+
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
 
