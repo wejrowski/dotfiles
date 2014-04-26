@@ -68,6 +68,7 @@ Plugin 'tpope/vim-fugitive'              " GIT - Gblame etc.
 Plugin 'scrooloose/syntastic'            " Syntax error help
 Plugin 'tpope/vim-surround'              " manipulate surrounding characters
 Plugin 'godlygeek/tabular'               " pretty indents/formatting
+Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
 
 " TESTING
 Plugin 'thoughtbot/vim-rspec'
