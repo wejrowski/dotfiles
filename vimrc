@@ -235,7 +235,7 @@ endfunction
 
 
 "COLOR ADJUSTMENTS
-highlight ExtraWhitespace ctermfg=red guifg=red
+highlight ExtraWhitespace ctermfg=black ctermbg=red guifg=back guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
