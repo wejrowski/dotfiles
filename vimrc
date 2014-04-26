@@ -151,6 +151,11 @@ function! ExecuteFile(filename) " via Chris Hunt
 endfunction
 map <leader>e :call ExecuteFile(expand("%"))<cr>
 
+function! ExecuteRubyFileWithERB(filename)
+  exec ":!ruby -e \"load '" . a:filename . "'; require 'irb'; IRB.start;\""
+endfunction
+map <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
+
 " TAB NAVIGATION
 " - To move a split to a tab use ctrl+w T
 " - Move splits around with ctrl+w H/L/J/K
