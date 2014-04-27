@@ -109,6 +109,7 @@ nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>qq :q!<CR>
+nnoremap <leader>wq :wq<CR>
 
 " Always move down a line
 noremap j gj
