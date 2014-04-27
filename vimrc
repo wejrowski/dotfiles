@@ -1,7 +1,6 @@
 let mapleader = " "
 
-"------------------------------------------
-"- VUNDLE & PLUGIN SETTINGS ---------------
+" = VUNDLE SETUP ===========================
 
 " :PluginInstall  - install vundles
 " :h vundle - for help
@@ -11,8 +10,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Plugin 'gmarik/vundle'
 
-"------------------------------------------
-"- PLUGINS + PLUGIN SETTINGS --------------
+" = PLUGINS + PLUGIN SETTINGS ==============
 
 " NAVIGATING
 Plugin 'kien/ctrlp.vim'
@@ -81,8 +79,7 @@ nnoremap <Leader>ta :call RunAllSpecs()<CR>
 
 filetype plugin indent on " Required for vundle
 
-"------------------------------------------
-"- SETTINGS -------------------------------
+"= SETTINGS ===============================
 
 set splitbelow
 set splitright
@@ -199,7 +196,7 @@ function! ExecuteRubyFileWithERB(filename)
 endfunction
 nnoremap <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
 
-" TAB NAVIGATION
+" = TAB NAVIGATION ========================
 " (and to move a split to a tab use ctrl+w T)
 nnoremap <D-H> :tabprev<CR>
 nnoremap <D-L> :tabnext<CR>
@@ -210,10 +207,9 @@ nnoremap <leader>L :call MoveTabRight()<CR>
 nnoremap <leader><leader>H :call MergeLeft()<CR>
 nnoremap <leader><leader>L :call MergeRight()<CR>
 
-"------------------------------------------
-"- CUSTOM FUNCTIONS -----------------------
+"= CUSTOM FUNCTIONS =======================
 
-"" Merge a tab into a split in the previous tab
+" Merge a tab into a split in the previous tab
 function MergeLeft()
   "" Tab pages are not zero index
   if tabpagenr() == 1
@@ -232,9 +228,9 @@ function MergeLeft()
   execute "buffer" bufferName
 endfunction
 
-"" Merge a tab into a split in the next tab
+" Merge a tab into a split in the next tab
 function MergeRight()
-  "" Tab pages are not zero index
+  " Tab pages are not zero index
   if tabpagenr() == tabpagenr("$")
     return
   endif
@@ -270,7 +266,7 @@ function MoveTabLeft()
 endfunction
 
 
-"COLOR ADJUSTMENTS
+"kCOLOR ADJUSTMENTS
 highlight ExtraWhitespace ctermfg=black ctermbg=red guifg=back guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
