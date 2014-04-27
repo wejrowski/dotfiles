@@ -123,6 +123,7 @@ nnoremap <leader>s :nohlsearch<CR>
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>qq :q!<CR>
 
 " Always move down a line
 noremap j gj
