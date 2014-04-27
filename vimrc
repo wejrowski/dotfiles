@@ -20,13 +20,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'schickling/vim-bufonly' "Additional buffer helpers
 Plugin 'jlanzarotta/bufexplorer'
 let NERDTreeShowHidden=1
-nmap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
 let g:NERDTreeWinPos = "left"
 
 Plugin 'mileszs/ack.vim'
-map <leader>a :Ack<space>
-map <D-F> :Ack<space>
+nnoremap <leader>a :Ack<space>
+nnoremap <D-F> :Ack<space>
 if executable("ack")
   " use default config
 elseif executable("ack-grep")
@@ -38,7 +38,7 @@ else
 endif
 
 Plugin 'Lokaltog/vim-easymotion'
-map s <Plug>(easymotion-s2)
+nnoremap s <Plug>(easymotion-s2)
 
 Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 
@@ -57,7 +57,7 @@ autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
 " SHORTCUTS/HELPERS
 Plugin 'tpope/vim-commentary'
-map <leader>c gcc
+nnoremap <leader>c gcc
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
 Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
 Plugin 'Valloric/YouCompleteMe'          " Auto completion - Read YCM installation instructions
@@ -73,9 +73,9 @@ Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
 " TESTING
 Plugin 'thoughtbot/vim-rspec'
 let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
-map <Leader>tt :call RunCurrentSpecFile()<CR>
-map <Leader>ts :call RunNearestSpec()<CR>
-map <Leader>ta :call RunAllSpecs()<CR>
+nnoremap <Leader>tt :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>ts :call RunNearestSpec()<CR>
+nnoremap <Leader>ta :call RunAllSpecs()<CR>
 
 " Plugin 'taylor/vim-zoomwin'
 
@@ -88,7 +88,7 @@ set splitbelow
 set splitright
 set relativenumber
 set number
-map <leader>r :set relativenumber!<CR> " Toggle relative numbers
+nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 set guifont=Panic\ Sans:h12 " Monaco:h12
 set guioptions-=T           " Removes top toolbar
 set guioptions-=r           " Removes right hand scroll bar
@@ -117,8 +117,8 @@ set clipboard=unnamed
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
 
-map <leader>w :w<CR>
-map <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 
 " Always move down a line
 noremap j gj
@@ -127,10 +127,10 @@ noremap gj j
 noremap gk k
 
 " Easy resizing!
-map - :vertical resize -1<CR>
-map _ :vertical resize +1<CR>
-map = :resize -1<CR>
-map + :resize +1<CR>
+nnoremap - :vertical resize -1<CR>
+nnoremap _ :vertical resize +1<CR>
+nnoremap = :resize -1<CR>
+nnoremap + :resize +1<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
@@ -141,9 +141,9 @@ autocmd FileType markdown set linebreak
 autocmd FileType markdown set nolist
 
 " Git shortcuts
-map <leader>gb :Gblame<cr>
-map <leader>gl :!clear && git log -p %<cr>
-map <leader>gd :!clear && git diff %<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gl :!clear && git log -p %<cr>
+nnoremap <leader>gd :!clear && git diff %<cr>
 
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
@@ -172,19 +172,19 @@ function! ExecuteFile(filename) " via Chris Hunt
     exec ":!echo \"Don't know how to execute: \"" .  a:filename
   end
 endfunction
-map <leader>e :call ExecuteFile(expand("%"))<cr>
+nnoremap <leader>e :call ExecuteFile(expand("%"))<cr>
 
 function! ExecuteRubyFileWithERB(filename)
   exec ":!ruby -e \"load '" . a:filename . "'; require 'irb'; IRB.start;\""
 endfunction
-map <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
+nnoremap <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
 
 " TAB NAVIGATION
 " - To move a split to a tab use ctrl+w T
-map <D-H> :tabprev<CR>
-map <D-L> :tabnext<CR>
-map <leader>h :tabprev<CR>
-map <leader>l :tabnext<CR>
+nnoremap <D-H> :tabprev<CR>
+nnoremap <D-L> :tabnext<CR>
+nnoremap <leader>h :tabprev<CR>
+nnoremap <leader>l :tabnext<CR>
 nnoremap <leader>H :call MoveTabLeft()<CR>
 nnoremap <leader>L :call MoveTabRight()<CR>
 nnoremap <leader><leader>H :call MergeLeft()<CR>
