@@ -109,6 +109,10 @@ set ignorecase  " Ignore case in search
 set backspace=2 " Fix vim backspace issue
 set noswapfile
 
+" Make use of statusbar
+set laststatus=2
+set statusline=%F%m%r%h%w%m\ \ %{fugitive#statusline()}\ %=[%l,%c]\ \ [%L,%p%%]
+
 " Default use normal clipboard and
 set clipboard=unnamed
 " don't copy to clipboard when deleting
