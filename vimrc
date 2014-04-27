@@ -106,6 +106,7 @@ set incsearch
 set hlsearch    " Highlight search matches
 set ignorecase  " Ignore case in search
 set backspace=2 " Fix vim backspace issue
+set noswapfile
 
 " Default use normal clipboard and
 set clipboard=unnamed
@@ -114,7 +115,9 @@ set clipboard=unnamed
 
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
+
 map <leader>w :w<CR>
+map <leader>q :q<CR>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown map j gj
