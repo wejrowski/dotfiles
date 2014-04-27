@@ -137,6 +137,20 @@ nnoremap _ :vertical resize +1<CR>
 nnoremap = :resize -1<CR>
 nnoremap + :resize +1<CR>
 
+" Quickly get inside next or previous parenthesis etc
+onoremap in( :<c-u>execute "normal! /(\rlvi("<cr>
+onoremap in) :<c-u>execute "normal! /)\rhvi("<cr>
+onoremap il( :<c-u>execute "normal! /(\rNlvi("<cr>
+onoremap il) :<c-u>execute "normal! /)\rNhvi("<cr>
+onoremap in{ :<c-u>execute "normal! /{\rlvi{"<cr>
+onoremap in} :<c-u>execute "normal! /}\rhvi{"<cr>
+onoremap il{ :<c-u>execute "normal! /{\rNlvi{"<cr>
+onoremap il} :<c-u>execute "normal! /}\rNhvi{"<cr>
+onoremap in[ :<c-u>execute "normal! /[\rlvi["<cr>
+onoremap in] :<c-u>execute "normal! /]\rhvi["<cr>
+onoremap il[ :<c-u>execute "normal! /[\rNlvi["<cr>
+onoremap il] :<c-u>execute "normal! /]\rNhvi["<cr>
+
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
