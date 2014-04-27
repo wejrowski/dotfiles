@@ -30,6 +30,7 @@ $ brew install ctags
 * https://github.com/ryanb/dotfiles
 * http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/
 * http://railscasts.com/episodes/308-oh-my-zsh
+* http://learnvimscriptthehardway.stevelosh.com
  
 
 **Misc Apps**
