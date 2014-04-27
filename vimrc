@@ -125,6 +125,12 @@ noremap k gk
 noremap gj j
 noremap gk k
 
+" Easy resizing!
+map - :vertical resize -1<CR>
+map _ :vertical resize +1<CR>
+map = :resize -1<CR>
+map + :resize +1<CR>
+
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap
