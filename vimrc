@@ -1,7 +1,6 @@
 let mapleader = " "
 
 " = VUNDLE SETUP ===========================
-
 " :PluginInstall  - install vundles
 " :h vundle - for help
 set nocompatible
@@ -79,18 +78,15 @@ nnoremap <Leader>ta :call RunAllSpecs()<CR>
 
 filetype plugin indent on " Required for vundle
 
-"= SETTINGS ===============================
-
+"= GENERAL SETTINGS =======================
 set splitbelow
 set splitright
 set relativenumber
 set number
-nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 set guifont=Panic\ Sans:h12 " Monaco:h12
 set guioptions-=T           " Removes top toolbar
 set guioptions-=r           " Removes right hand scroll bar
 set go-=L                   " Removes left hand scroll bar
-autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 set list
 set listchars=trail:.
 set colorcolumn=80
@@ -105,19 +101,15 @@ set hlsearch    " Highlight search matches
 set ignorecase  " Ignore case in search
 set backspace=2 " Fix vim backspace issue
 set noswapfile
-
-" Make use of statusbar
-set laststatus=2
+set laststatus=2 " Make use of statusbar
 set statusline=%F%m%r%h%w%m\ \ %{fugitive#statusline()}\ %=[%l,%c]\ \ [%L,%p%%]
+set clipboard=unnamed " Default use normal clipboard and
 
-" Default use normal clipboard and
-set clipboard=unnamed
-" don't copy to clipboard when deleting
-" nnoremap d "_d
 
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
 
+nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>qq :q!<CR>
@@ -151,16 +143,16 @@ onoremap il] :<c-u>execute "normal! /]\rNhvi["<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Git shortcuts
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gl :!clear && git log -p %<cr>
+nnoremap <leader>gd :!clear && git diff %<cr>
+
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap
 autocmd FileType markdown set linebreak
 autocmd FileType markdown set nolist
-
-" Git shortcuts
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gl :!clear && git log -p %<cr>
-nnoremap <leader>gd :!clear && git diff %<cr>
 
 " Use liquid highlighting in jekyll
 au BufNewFile,BufRead */source/*.xml,*/source/*.html set ft=liquid
@@ -206,8 +198,6 @@ nnoremap <leader>H :call MoveTabLeft()<CR>
 nnoremap <leader>L :call MoveTabRight()<CR>
 nnoremap <leader><leader>H :call MergeLeft()<CR>
 nnoremap <leader><leader>L :call MergeRight()<CR>
-
-"= CUSTOM FUNCTIONS =======================
 
 " Merge a tab into a split in the previous tab
 function MergeLeft()
@@ -266,7 +256,7 @@ function MoveTabLeft()
 endfunction
 
 
-"kCOLOR ADJUSTMENTS
+" COLOR ADJUSTMENTS
 highlight ExtraWhitespace ctermfg=black ctermbg=red guifg=back guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
