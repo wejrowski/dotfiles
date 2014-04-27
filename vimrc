@@ -168,10 +168,10 @@ map <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
 
 " TAB NAVIGATION
 " - To move a split to a tab use ctrl+w T
-map <D-H> :tabp<CR>
-map <D-L> :tabn<CR>
-map <leader>h :tabp<CR>
-map <leader>l :tabn<CR>
+map <D-H> :tabprev<CR>
+map <D-L> :tabnext<CR>
+map <leader>h :tabprev<CR>
+map <leader>l :tabnext<CR>
 nnoremap <leader>H :call MoveTabLeft()<CR>
 nnoremap <leader>L :call MoveTabRight()<CR>
 nnoremap <leader><leader>H :call MergeLeft()<CR>
