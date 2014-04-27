@@ -133,6 +133,7 @@ nnoremap = :resize -1<CR>
 nnoremap + :resize +1<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set commentstring=<!--%s-->
