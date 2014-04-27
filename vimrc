@@ -132,6 +132,8 @@ map _ :vertical resize +1<CR>
 map = :resize -1<CR>
 map + :resize +1<CR>
 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap
