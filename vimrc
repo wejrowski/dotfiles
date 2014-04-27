@@ -119,9 +119,13 @@ nnoremap <leader>s :nohlsearch<CR>
 map <leader>w :w<CR>
 map <leader>q :q<CR>
 
+" Always move down a line
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
 autocmd FileType markdown setlocal spell
-autocmd FileType markdown map j gj
-autocmd FileType markdown map k gk
 autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap
 autocmd FileType markdown set linebreak
