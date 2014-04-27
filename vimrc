@@ -1,6 +1,6 @@
 let mapleader = " "
 
-" = VUNDLE SETUP ===========================
+" = VUNDLE > SETUP ===========================
 " :PluginInstall  - install vundles
 " :h vundle - for help
 set nocompatible
@@ -9,9 +9,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Plugin 'gmarik/vundle'
 
-" = PLUGINS + PLUGIN SETTINGS ==============
-
-" NAVIGATING
+" = VUNDLE > NAVIGATING
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'schickling/vim-bufonly' "Additional buffer helpers
@@ -36,10 +34,9 @@ endif
 
 Plugin 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
-
 Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 
-" COLORS / SYNTAX HELP
+" = VUNDLE > COLORS / SYNTAX HELP
 Plugin 'wejrowski/vim-codeschool'
 color codeschool
 syntax enable "Fixes terminal color issue
@@ -52,7 +49,7 @@ au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssCol
 Plugin 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
-" SHORTCUTS/HELPERS
+" = VUNDLE > SHORTCUTS/HELPERS
 Plugin 'tpope/vim-commentary'
 nnoremap <leader>c gcc
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
@@ -67,7 +64,7 @@ Plugin 'tpope/vim-surround'              " manipulate surrounding characters
 Plugin 'godlygeek/tabular'               " pretty indents/formatting
 Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
 
-" TESTING
+" VUNDLE > TESTING
 Plugin 'thoughtbot/vim-rspec'
 let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
 nnoremap <Leader>tt :call RunCurrentSpecFile()<CR>
@@ -196,11 +193,11 @@ nnoremap <leader>h :tabprev<CR>
 nnoremap <leader>l :tabnext<CR>
 nnoremap <leader>H :call MoveTabLeft()<CR>
 nnoremap <leader>L :call MoveTabRight()<CR>
-nnoremap <leader><leader>H :call MergeLeft()<CR>
-nnoremap <leader><leader>L :call MergeRight()<CR>
+nnoremap <leader><leader>H :call MergeTabLeft()<CR>
+nnoremap <leader><leader>L :call MergeTabRight()<CR>
 
 " Merge a tab into a split in the previous tab
-function MergeLeft()
+function MergeTabLeft()
   "" Tab pages are not zero index
   if tabpagenr() == 1
     return
@@ -219,7 +216,7 @@ function MergeLeft()
 endfunction
 
 " Merge a tab into a split in the next tab
-function MergeRight()
+function MergeTabRight()
   " Tab pages are not zero index
   if tabpagenr() == tabpagenr("$")
     return
@@ -256,7 +253,7 @@ function MoveTabLeft()
 endfunction
 
 
-" COLOR ADJUSTMENTS
+" Mark extra whitespace
 highlight ExtraWhitespace ctermfg=black ctermbg=red guifg=back guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
