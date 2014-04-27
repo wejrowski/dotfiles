@@ -200,7 +200,7 @@ endfunction
 nnoremap <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
 
 " TAB NAVIGATION
-" - To move a split to a tab use ctrl+w T
+" (and to move a split to a tab use ctrl+w T)
 nnoremap <D-H> :tabprev<CR>
 nnoremap <D-L> :tabnext<CR>
 nnoremap <leader>h :tabprev<CR>
