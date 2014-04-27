@@ -1,6 +1,6 @@
 let mapleader = " "
 
-" = VUNDLE > SETUP ===========================
+" = VUNDLE > SETUP ===============================
 " :PluginInstall  - install vundles
 " :h vundle - for help
 set nocompatible
@@ -9,7 +9,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Plugin 'gmarik/vundle'
 
-" = VUNDLE > NAVIGATING
+" = VUNDLE > NAVIGATING ==========================
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'schickling/vim-bufonly' "Additional buffer helpers
@@ -36,7 +36,7 @@ Plugin 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
 Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 
-" = VUNDLE > COLORS / SYNTAX HELP
+" = VUNDLE > COLORS / SYNTAX HELP ================
 Plugin 'wejrowski/vim-codeschool'
 color codeschool
 syntax enable "Fixes terminal color issue
@@ -49,7 +49,7 @@ au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssCol
 Plugin 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
-" = VUNDLE > SHORTCUTS/HELPERS
+" = VUNDLE > SHORTCUTS/HELPERS ===================
 Plugin 'tpope/vim-commentary'
 nnoremap <leader>c gcc
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
@@ -75,7 +75,7 @@ nnoremap <Leader>ta :call RunAllSpecs()<CR>
 
 filetype plugin indent on " Required for vundle
 
-"= GENERAL SETTINGS =======================
+"= GENERAL SETTINGS ==============================
 set splitbelow
 set splitright
 set relativenumber
@@ -101,7 +101,6 @@ set noswapfile
 set laststatus=2 " Make use of statusbar
 set statusline=%F%m%r%h%w%m\ \ %{fugitive#statusline()}\ %=[%l,%c]\ \ [%L,%p%%]
 set clipboard=unnamed " Default use normal clipboard and
-
 
 " Clear search underlines
 nnoremap <leader>s :nohlsearch<CR>
@@ -137,6 +136,7 @@ onoremap in] :<c-u>execute "normal! /]\rhvi["<cr>
 onoremap il[ :<c-u>execute "normal! /[\rNlvi["<cr>
 onoremap il] :<c-u>execute "normal! /]\rNhvi["<cr>
 
+" Easy edit and load vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -185,7 +185,7 @@ function! ExecuteRubyFileWithERB(filename)
 endfunction
 nnoremap <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
 
-" = TAB NAVIGATION ========================
+" = TAB NAVIGATION ===============================
 " (and to move a split to a tab use ctrl+w T)
 nnoremap <D-H> :tabprev<CR>
 nnoremap <D-L> :tabnext<CR>
