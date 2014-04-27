@@ -88,6 +88,7 @@ set splitbelow
 set splitright
 set relativenumber
 set number
+map <leader>r :set relativenumber!<CR> " Toggle relative numbers
 set guifont=Panic\ Sans:h12 " Monaco:h12
 set guioptions-=T           " Removes top toolbar
 set guioptions-=r           " Removes right hand scroll bar
