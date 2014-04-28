@@ -19,18 +19,8 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
 let g:NERDTreeWinPos = "left"
 
-Plugin 'mileszs/ack.vim'
-nnoremap <leader>a :Ack<space>
-nnoremap <D-F> :Ack<space>
-if executable("ack")
-  " use default config
-elseif executable("ack-grep")
-  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-elseif executable("ag")
-  let g:ackprg="ag --nocolor --nogroup --column"
-else
-  echo "The ack program is not installed"
-endif
+Plugin 'rking/ag.vim'
+nnoremap <leader>a :Ag!<space>
 
 Plugin 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
@@ -109,6 +99,7 @@ nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>qq :q!<CR>
+" OR ZZ
 nnoremap <leader>wq :wq<CR>
 
 " Always move down a line
