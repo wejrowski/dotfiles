@@ -53,6 +53,8 @@ Plugin 'scrooloose/syntastic'            " Syntax error help
 Plugin 'tpope/vim-surround'              " manipulate surrounding characters
 Plugin 'godlygeek/tabular'               " pretty indents/formatting
 Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
+Plugin 'mattn/webapi-vim'                " Needed for mattn/gist-vim
+Plugin 'mattn/gist-vim'                  " Create/edit gists in vim
 
 " VUNDLE > TESTING
 Plugin 'thoughtbot/vim-rspec'
