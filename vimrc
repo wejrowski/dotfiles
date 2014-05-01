@@ -174,10 +174,10 @@ function! ExecuteFile(filename) " via Chris Hunt
 endfunction
 nnoremap <leader>e :call ExecuteFile(expand("%"))<cr>
 
-function! ExecuteRubyFileWithERB(filename)
+function! ExecuteRubyFileWithIRB(filename)
   exec ":!ruby -e \"load '" . a:filename . "'; require 'irb'; IRB.start;\""
 endfunction
-nnoremap <leader>ee :call ExecuteRubyFileWithERB(expand("%"))<cr>
+nnoremap <leader>ee :call ExecuteRubyFileWithIRB(expand("%"))<cr>
 
 " = TAB NAVIGATION ===============================
 " (and to move a split to a tab use ctrl+w T)
