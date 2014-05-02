@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+export EDITOR=vim
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -31,6 +33,7 @@ alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias rvmcur="rvm info | grep GEM_HOME"
 alias rs="rvmsudo rails s -p 80"
+alias vim="reattach-to-user-namespace vim" # fix tmux clipboard issue
 
 # vim colors in tmux. c.f. http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 alias tmux="TERM=screen-256color-bce tmux"

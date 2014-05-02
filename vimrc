@@ -92,6 +92,9 @@ set backspace=2 " Fix vim backspace issue
 set noswapfile
 set laststatus=2 " Make use of statusbar
 set statusline=%F%m%r%h%w%m\ \ %{fugitive#statusline()}\ %=[%l,%c]\ \ [%L,%p%%]
+
+" With tmux, create bash alias: alias vim="reattach-to-user-namespace vim"
+" and brew install reattach-to-user-namespace
 set clipboard=unnamed " Default use normal clipboard and
 
 " Clear search underlines
