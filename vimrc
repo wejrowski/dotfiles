@@ -107,6 +107,10 @@ nnoremap <leader>q :q<CR>
 " OR ZZ
 " nnoremap <leader>wq :wq<CR>
 
+" Scroll with one hand easier
+noremap 9 <c-e>
+noremap 0 <c-y>
+
 " Always move down a line
 noremap j gj
 noremap k gk
