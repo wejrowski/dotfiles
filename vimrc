@@ -43,6 +43,7 @@ autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 Plugin 'tpope/vim-commentary'
 map <leader>c gcc
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
+Plugin 'tmhedberg/matchit'               " Required for rubyblock
 Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
 Plugin 'Valloric/YouCompleteMe'          " Auto completion - Read YCM installation instructions
 Plugin 'tpope/vim-endwise'               " auto end ruby blocks
