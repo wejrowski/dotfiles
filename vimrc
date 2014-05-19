@@ -41,7 +41,7 @@ autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
 " = VUNDLE > SHORTCUTS/HELPERS ===================
 Plugin 'tpope/vim-commentary'
-nnoremap <leader>c gcc
+map <leader>c gcc
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
 Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
 Plugin 'Valloric/YouCompleteMe'          " Auto completion - Read YCM installation instructions
