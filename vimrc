@@ -58,7 +58,11 @@ Plugin 'mattn/gist-vim'                  " Create/edit gists in vim
 
 " VUNDLE > TESTING
 Plugin 'thoughtbot/vim-rspec'
-let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
+" Plugin 'skwp/vim-rspec'
+" If using mvim
+" let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
+" let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
+let g:rspec_command = "!zeus rspec {spec}"
 nnoremap <Leader>tt :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>ts :call RunNearestSpec()<CR>
 nnoremap <Leader>ta :call RunAllSpecs()<CR>
