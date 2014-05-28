@@ -169,7 +169,7 @@ function RenameFile() " via Chris Hunt
     redraw!
   endif
 endfunction
-nnoremap <leader>nn :call RenameFile()<cr>
+nnoremap <leader>N :call RenameFile()<cr>
 
 function! ExecuteFile(filename) " via Chris Hunt
   :w
