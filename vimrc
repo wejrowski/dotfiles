@@ -41,7 +41,7 @@ autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
 " = VUNDLE > SHORTCUTS/HELPERS ===================
 Plugin 'tpope/vim-commentary'
-map <leader>c gcc
+map <leader>c gcc<esc>
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
 Plugin 'tmhedberg/matchit'               " Required for rubyblock
 Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
