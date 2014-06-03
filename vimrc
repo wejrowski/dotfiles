@@ -146,6 +146,10 @@ onoremap il] :<c-u>execute "normal! /]\rNhvi["<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Save and load sessions (mks=mksession)
+nnoremap <leader>ss :mks! ~/.vimsession<cr>
+nnoremap <leader>sl :source ~/.vimsession<cr>
+
 " Git shortcuts
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :!clear && git log -p %<cr>
