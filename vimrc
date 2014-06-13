@@ -30,7 +30,9 @@ Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 Plugin 'wejrowski/vim-codeschool'
 color codeschool
 syntax enable "Fixes terminal color issue
-Plugin 'ap/vim-css-color'
+
+" Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
+
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'plasticboy/vim-markdown'

@@ -33,7 +33,7 @@ alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias rvmcur="rvm info | grep GEM_HOME"
 alias rs="rvmsudo rails s -p 80"
-alias vim="reattach-to-user-namespace vim" # fix tmux clipboard issue
+# alias vim="reattach-to-user-namespace vim" # fix tmux clipboard issue
 
 # vim colors in tmux. c.f. http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 
