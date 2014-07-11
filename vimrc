@@ -113,6 +113,9 @@ nnoremap <leader>q :q<CR>
 " OR ZZ
 " nnoremap <leader>wq :wq<CR>
 
+" easy store in main clipboard for later usage
+noremap <leader>y "+y
+
 " make it easier to use a macro
 noremap , @1
 
