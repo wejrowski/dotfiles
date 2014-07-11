@@ -115,6 +115,7 @@ nnoremap <leader>q :q<CR>
 
 " easy store in main clipboard for later usage
 noremap <leader>y "+y
+noremap <leader>p "+p
 
 " make it easier to use a macro
 noremap , @1
