@@ -113,6 +113,9 @@ nnoremap <leader>q :q<CR>
 " OR ZZ
 " nnoremap <leader>wq :wq<CR>
 
+" make it easier to use a macro
+map , @1
+
 " Scroll with one hand easier
 noremap [ <c-e>
 noremap ] <c-y>
