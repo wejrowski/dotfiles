@@ -120,9 +120,19 @@ noremap <leader>p "+p
 " make it easier to use a macro
 noremap , @1
 
-" Scroll with one hand easier
-noremap [ <c-e>
-noremap ] <c-y>
+" One handed nav
+function ToggleEasyNav()
+  if !exists("w:easy_nav") || w:easy_nav == 0
+    let w:easy_nav = 1
+    noremap j <c-e>
+    noremap k <c-y>
+  else
+    let w:easy_nav = 0
+    unmap j
+    unmap k
+  endif
+endfunction
+noremap <leader>j :call ToggleEasyNav()<cr>
 
 " Always move down a line
 noremap j gj
