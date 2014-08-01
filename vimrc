@@ -118,8 +118,9 @@ nnoremap <leader>q :q<CR>
 noremap <leader>y "+y
 noremap <leader>p "+p
 
-" make it easier to use a macro
+" make it easier to call a macro, and apply on multiple lines in v mode
 noremap , @1
+vnoremap , :g/^/ norm @1<CR>:nohlsearch<CR>
 
 " One handed nav
 function ToggleEasyNav()
