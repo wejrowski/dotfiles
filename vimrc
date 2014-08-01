@@ -104,7 +104,8 @@ set statusline=%F%m%r%h%w%m\ \ %{fugitive#statusline()}\ %=[%l,%c]\ \ [%L,%p%%]
 " and brew install reattach-to-user-namespace
 
 " Clear search underlines
-nnoremap <leader>s :nohlsearch<CR>
+nnoremap <leader>S :nohlsearch<CR>
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 nnoremap <leader>w :w<CR>
