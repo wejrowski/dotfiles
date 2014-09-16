@@ -131,8 +131,8 @@ function ToggleEasyNav()
     noremap k <c-y>
   else
     let w:easy_nav = 0
-    unmap j
-    unmap k
+    noremap j gj
+    noremap k gk
   endif
 endfunction
 noremap <leader>j :call ToggleEasyNav()<cr>
