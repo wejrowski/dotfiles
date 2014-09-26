@@ -289,3 +289,6 @@ highlight ExtraWhitespace ctermfg=15 ctermbg=red guifg=black guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+"Fix Air encoding NerdTree issue
+let g:NERDTreeDirArrows=0
