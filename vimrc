@@ -12,6 +12,7 @@ Plugin 'gmarik/vundle'
 " = VUNDLE > NAVIGATING ==========================
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+map <leader>f :NERDTreeFind<CR>
 Plugin 'schickling/vim-bufonly' "Additional buffer helpers
 Plugin 'jlanzarotta/bufexplorer'
 let NERDTreeShowHidden=1
