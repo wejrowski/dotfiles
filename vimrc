@@ -26,6 +26,10 @@ Plugin 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
 Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 
+"= JAVA ==========================================
+Plugin 'tpope/vim-classpath'
+
+
 " = VUNDLE > COLORS / SYNTAX HELP ================
 Plugin 'wejrowski/vim-codeschool'
 color codeschool
@@ -59,6 +63,11 @@ Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
 Plugin 'mattn/webapi-vim'                " Needed for mattn/gist-vim
 Plugin 'mattn/gist-vim'                  " Create/edit gists in vim
 
+" SnipMate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+
 " VUNDLE > TESTING
 Plugin 'thoughtbot/vim-rspec'
 " Plugin 'skwp/vim-rspec'
@@ -66,9 +75,42 @@ Plugin 'thoughtbot/vim-rspec'
 " let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
 " let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
 let g:rspec_command = "!zeus rspec {spec}"
-nnoremap <Leader>tt :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>ts :call RunNearestSpec()<CR>
-nnoremap <Leader>ta :call RunAllSpecs()<CR>
+nnoremap <Leader>tt :call RunCurrentTestFile()<CR>
+nnoremap <Leader>ts :call RunNearestTest()<CR>
+nnoremap <Leader>ta :call RunAllTests()<CR>
+
+function! RunCurrentTestFile()
+  let file_name = expand('%')
+  if match(file_name, '_test\.rb$') != -1
+    exec ":!zeus test ' . file_name
+  else
+    RunCurrentSpecFile()
+  endif
+endfunction
+
+function! RunNearestTest()
+  let file_name = expand('%')
+  "f match(a:filename, '\.rb$') != -1
+  if match(file_name, '\test\.rb$') != -1
+    exec ':!zeus test ' . file_name . ':' . line('.')
+  else
+    RunNearestSpec()
+  endif
+endfunction
+
+function! RunAllTests()
+  let file_name = expand('%')
+  if match(file_name, '_test\.rb$') != -1
+    exec ':!zeus test'
+  else
+    RunAllSpecs()
+  endif
+endfunction
+
+nnoremap <Leader>Tt :exec ':!zeus test ' . expand('%')<CR>
+nnoremap <Leader>Ts :exec ':!zeus test ' . expand('%') . ':' . line('.')<CR>
+nnoremap <Leader>Ta :exec ':!zeus test'<CR>
+
 
 " Plugin 'taylor/vim-zoomwin'
 
@@ -289,6 +331,9 @@ highlight ExtraWhitespace ctermfg=15 ctermbg=red guifg=black guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Remove all whitespace
+nnoremap <leader>W :%s/\ \s*$//g
 
 "Fix Air encoding NerdTree issue
 let g:NERDTreeDirArrows=0
