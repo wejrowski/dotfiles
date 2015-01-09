@@ -12,6 +12,7 @@ Plugin 'gmarik/vundle'
 " = VUNDLE > NAVIGATING ==========================
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+map <leader>f :NERDTreeFind<CR>
 Plugin 'schickling/vim-bufonly' "Additional buffer helpers
 Plugin 'jlanzarotta/bufexplorer'
 let NERDTreeShowHidden=1
@@ -39,7 +40,7 @@ syntax enable "Fixes terminal color issue
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-haml'
 au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
 Plugin 'kchmck/vim-coffee-script'
