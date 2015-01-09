@@ -67,7 +67,7 @@ alias ff="/usr/bin/open -a '/Applications/FireFox.app'"
 
 # GIT CLEANING
 function filter_wanted_branches {
-  cat $@ | grep -v "master$" | grep -v "release$" | grep -v "patch$"
+  cat $@ | grep -v "master$" | grep -v "release$" | grep -v "patch$" | grep -v "\*"
 }
 function merged_local {
   git branch --merged | filter_wanted_branches
@@ -76,11 +76,14 @@ function merged_remote {
   git branch -r --merged | filter_wanted_branches
 }
 function clean_merged {
-  echo "Deleting local..."
-  merged_local | xargs git branch -d
-  echo "Pruning..."
+  echo "Deleting local merged..."
+  merged_local | grep -v "\*" | xargs git branch -d
+
+  git fetch origin
+
+  echo "Pruning stale local origin branches..."
   git remote prune origin
-  echo "Deleting remote..."
+  echo "Deleting merged remotes..."
   merged_remote | grep "origin\/" | sed "s/ *origin\///" | xargs git push origin --delete
 }
 

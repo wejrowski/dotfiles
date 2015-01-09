@@ -138,11 +138,11 @@ function ToggleEasyNav()
 endfunction
 noremap <leader>j :call ToggleEasyNav()<cr>
 
-" Always move down a line
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+" Always move down a line on markdown only
+autocmd FileType markdown noremap j gj
+autocmd FileType markdown noremap k gk
+autocmd FileType markdown noremap gj j
+autocmd FileType markdown noremap gk k
 
 " Easy resizing!
 nnoremap - :vertical resize -1<CR>
