@@ -11,6 +11,8 @@ Plugin 'gmarik/vundle'
 
 " = VUNDLE > NAVIGATING ==========================
 Plugin 'kien/ctrlp.vim'
+set wildignore+=*build/iPhone*
+
 Plugin 'scrooloose/nerdtree'
 map <leader>f :NERDTreeFind<CR>
 Plugin 'schickling/vim-bufonly' "Additional buffer helpers
