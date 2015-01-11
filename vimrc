@@ -28,6 +28,7 @@ nnoremap <leader>a :Ag!<space>
 Plugin 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
 Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
+Plugin 'ervandew/supertab'
 
 "= JAVA ==========================================
 Plugin 'tpope/vim-classpath'
