@@ -66,30 +66,46 @@ alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias ff="/usr/bin/open -a '/Applications/FireFox.app'"
 
 # GIT CLEANING
-function filter_wanted_branches {
-  cat $@ | grep -v "master$" | grep -v "release$" | grep -v "patch$" | grep -v "\*"
+function merged_bwlocal {
+  git branch --merged | grep "bw-"
 }
-function merged_local {
-  git branch --merged | filter_wanted_branches
+function merged_bwremote {
+  git branch -r --merged | grep "bw-"
 }
-function merged_remote {
-  git branch -r --merged | filter_wanted_branches
-}
-function clean_merged {
-  echo "Deleting local merged..."
-  merged_local | grep -v "\*" | xargs git branch -d
-
-  git fetch origin
-
-  echo "Pruning stale local origin branches..."
-  git remote prune origin
-  echo "Deleting merged remotes..."
-  merged_remote | grep "origin\/" | sed "s/ *origin\///" | xargs git push origin --delete
-}
-
 function curr_branch {
   git branch | sed -n '/^\*/s/^\* //p'
 }
+
+function git_clean {
+  echo "Checking against $fg_bold[red]$(curr_branch)$reset_color"
+
+  if [ "$merged_bwlocal" != "" ]; then; echo "Merged locals:"; fi
+  for branch in `merged_bwlocal`; do; echo "  $fg_bold[yellow]$branch$reset_color"; done
+
+  for branch in `merged_bwlocal`
+  do
+    echo "Delete local branch $fg_bold[red]$branch$reset_color? (y/n)"
+    read yes
+    if [ "$yes" = "y" ]
+    then
+      git branch --delete $branch
+    fi
+  done
+
+  if [ "$merged_bwremote" != "" ]; then; echo "Merged remotes:"; fi
+  for branch in `merged_bwremote`; do; echo "  $fg_bold[yellow]$branch$reset_color"; done
+  for branch in `merged_bwremote`
+  do
+    echo "Delete remote branch $fg_bold[yellow]$branch$reset_color? (y/n)"
+    read yes
+    if [ "$yes" = "y" ]
+    then
+      echo "$branch" | sed "s/ *origin\///" | xargs git push origin --delete
+    fi
+  done
+
+}
+
 function gpr {
   echo "git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)"
   git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)
