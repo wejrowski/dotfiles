@@ -106,11 +106,6 @@ function git_clean {
 
 }
 
-function gpr {
-  echo "git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)"
-  git pull-request -b infusedsys:release -h wejrowski:$(curr_branch)
-}
-
 # MISC UNUSED
 # # vim bash (missing vim necessities.. I don't like it)
 # set -o vi
