@@ -63,7 +63,13 @@ Plugin 'tpope/vim-fugitive'              " GIT - Gblame etc.
 Plugin 'scrooloose/syntastic'            " Syntax error help
 Plugin 'tpope/vim-surround'              " manipulate surrounding characters
 Plugin 'godlygeek/tabular'               " pretty indents/formatting
+
 Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 Plugin 'mattn/webapi-vim'                " Needed for mattn/gist-vim
 Plugin 'mattn/gist-vim'                  " Create/edit gists in vim
 
