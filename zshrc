@@ -107,9 +107,6 @@ function git_clean {
 }
 
 # MISC UNUSED
-# # vim bash (missing vim necessities.. I don't like it)
-# set -o vi
-
 # #brew install bash-completion
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #   . $(brew --prefix)/etc/bash_completion
