@@ -31,7 +31,7 @@ Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
 Plugin 'ervandew/supertab'
 
 "= JAVA ==========================================
-Plugin 'tpope/vim-classpath'
+"= Plugin 'tpope/vim-classpath'
 
 
 " = VUNDLE > COLORS / SYNTAX HELP ================
@@ -55,7 +55,7 @@ map <leader>c gcc<esc>
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
 Plugin 'tmhedberg/matchit'               " Required for rubyblock
 Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
-Plugin 'Valloric/YouCompleteMe'          " Auto completion - Read YCM installation instructions
+
 Plugin 'tpope/vim-endwise'               " auto end ruby blocks
 Plugin 'groenewege/vim-markdown-preview'
 Plugin 'kshenoy/vim-signature'           " Marker visuals
