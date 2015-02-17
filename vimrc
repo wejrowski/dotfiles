@@ -166,8 +166,8 @@ nnoremap <leader>q :q<CR>
 " OR ZZ
 " nnoremap <leader>wq :wq<CR>
 
-" easy store in main clipboard for later usage
-noremap <leader>y "+y
+" easy store in main clipboard for later usage (gv rehighlights selection)
+vnoremap <leader>y "+ygv
 noremap <leader>p "+p
 
 " make it easier to call a macro, and apply on multiple lines in v mode
