@@ -65,6 +65,12 @@ function coda() {  osascript -e "tell application \"Coda\"" -e "tell document 1"
 alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias ff="/usr/bin/open -a '/Applications/FireFox.app'"
 
+
+function param () {
+  echo $(echo $@ | sed -e 's/[^a-zA-Z0-9\-]/\-/g')
+}
+
+
 # GIT CLEANING
 function merged_bwlocal {
   git branch --merged | grep "bw-"
