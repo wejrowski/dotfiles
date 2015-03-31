@@ -73,6 +73,8 @@ nmap ga <Plug>(EasyAlign)
 Plugin 'mattn/webapi-vim'                " Needed for mattn/gist-vim
 Plugin 'mattn/gist-vim'                  " Create/edit gists in vim
 
+com! JSON %!python -m json.tool
+
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
