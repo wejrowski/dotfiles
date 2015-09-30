@@ -14,7 +14,11 @@ Plugin 'gmarik/vundle'
 
 " = VUNDLE > NAVIGATING ==========================
 Plugin 'kien/ctrlp.vim'
-set wildignore+=*build/iPhone*
+Plugin 'JazzCore/ctrlp-cmatcher'
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_max_files=100000
+set wildignore+=*build/iPhone*,*.jar,*.class,*target
 
 Plugin 'scrooloose/nerdtree'
 map <leader>f :NERDTreeFind<CR>
