@@ -163,6 +163,8 @@ set backspace=2 " Fix vim backspace issue
 set noswapfile
 set laststatus=2 " Make use of statusbar
 set statusline=%F%m%r%h%w%m\ \ %{fugitive#statusline()}\ %=[%l,%c]\ \ [%L,%p%%]
+set undofile " Keep undo history between sessions
+set undodir=~/.vim/undo
 
 " With tmux, create bash alias: alias vim="reattach-to-user-namespace vim"
 " and brew install reattach-to-user-namespace
