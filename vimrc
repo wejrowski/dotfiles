@@ -41,7 +41,10 @@ nmap <Leader>] <C-w><C-]><C-w>T
 Plugin 'ervandew/supertab'
 
 "= JAVA ==========================================
-"= Plugin 'tpope/vim-classpath'
+" Plugin 'tpope/vim-classpath'
+Plugin 'vim-scripts/groovy.vim'
+set autoindent
+set cindent
 
 
 " = VUNDLE > COLORS / SYNTAX HELP ================
@@ -51,17 +54,44 @@ syntax enable "Fixes terminal color issue
 
 " Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
 
+Plugin 'pangloss/vim-javascript'
+let javascript_enable_domhtmlcss = 1
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+
+Plugin 'scrooloose/syntastic'            " Syntax error help
+let g:syntastic_html_tidy_exec = 'tidy5'
+
+Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-haml'
-au BufNewFile,BufRead *.scss,*.sass syntax cluster sassCssAttributes add=@cssColors
+Plugin 'pangloss/vim-javascript'
+
+au BufNewFile,BufRead *.scss,*.sass,*.styl syntax cluster sassCssAttributes add=@cssColors
+Plugin 'leafgarland/typescript-vim'
 Plugin 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead Gruntfile set filetype=javascript
+autocmd BufNewFile,BufRead *.ts set filetype=javascript
 
 " = VUNDLE > SHORTCUTS/HELPERS ===================
+nnoremap <leader>C :!echo '%' \| pbcopy<CR>
 Plugin 'tpope/vim-commentary'
 map <leader>c gcc<esc>
+" Simple single line comments since commentary does not support this
+" nnoremap <leader>/ :<c-u>execute "normal! I//\ "<cr>
+" nnoremap <leader>? :<c-u>execute "normal! ^xxx"<cr>
+function! CommentToggle()
+    execute ':silent! s/\([^ ]\)/\/\/ \1/'
+    execute ':silent! s/^\( *\)\/\/ \/\/ /\1/'
+endfunction
+
+nnoremap <leader>/ :call CommentToggle()<CR>
+vnoremap <leader>/ :call CommentToggle()<CR>
+
+
+
 Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
 Plugin 'tmhedberg/matchit'               " Required for rubyblock
 Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
@@ -70,7 +100,6 @@ Plugin 'tpope/vim-endwise'               " auto end ruby blocks
 Plugin 'groenewege/vim-markdown-preview'
 Plugin 'kshenoy/vim-signature'           " Marker visuals
 Plugin 'tpope/vim-fugitive'              " GIT - Gblame etc.
-Plugin 'scrooloose/syntastic'            " Syntax error help
 Plugin 'tpope/vim-surround'              " manipulate surrounding characters
 Plugin 'godlygeek/tabular'               " pretty indents/formatting
 
@@ -152,9 +181,13 @@ set listchars=trail:.
 set colorcolumn=80
 set cursorcolumn
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set softtabstop=4
+set shiftwidth=4
+" autocmd BufNewFile,BufRead *.js set tabstop=4
+" autocmd BufNewFile,BufRead *.json set tabstop=4
+" autocmd BufNewFile,BufRead *.json set shiftwidth=4
 set ruler       " Show row and col in footer
 set incsearch
 set hlsearch    " Highlight search matches
@@ -176,6 +209,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <leader>r :set relativenumber!<CR> " Toggle relative numbers
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
 " nnoremap <leader>qq :q!<CR>
 " OR ZZ
 " nnoremap <leader>wq :wq<CR>
@@ -183,6 +217,8 @@ nnoremap <leader>q :q<CR>
 " easy store in main clipboard for later usage (gv rehighlights selection)
 vnoremap <leader>y "+ygv
 noremap <leader>p "+p
+onoremap Yw "+yiw
+onoremap YW "+yiW
 
 " make it easier to call a macro, and apply on multiple lines in v mode
 " you can also do this by, in visual mode, calling :norm! @<key>
@@ -229,8 +265,8 @@ onoremap in] :<c-u>execute "normal! /]\rhvi["<cr>
 onoremap il[ :<c-u>execute "normal! /[\rNlvi["<cr>
 onoremap il] :<c-u>execute "normal! /]\rNhvi["<cr>
 
-" Easy edit and load vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Easy edit/reload vimrc
+nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Save and load sessions (mks=mksession)
@@ -349,6 +385,9 @@ function MoveTabLeft()
   endif
 endfunction
 
+" Navigate between buffers
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
 
 " Mark extra whitespace
 highlight ExtraWhitespace ctermfg=15 ctermbg=red guifg=black guibg=red
