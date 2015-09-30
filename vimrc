@@ -1,5 +1,8 @@
 let mapleader = " "
 
+" copy filename
+" nnoremap <Leader>C :!echo '%' \| pbcopy"<cr>
+
 " = VUNDLE > SETUP ===============================
 " :PluginInstall  - install vundles
 " :h vundle - for help
