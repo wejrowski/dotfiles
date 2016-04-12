@@ -1,7 +1,6 @@
 let mapleader = " "
 
-" copy filename
-" nnoremap <Leader>C :!echo '%' \| pbcopy"<cr>
+" copy filename " nnoremap <Leader>C :!echo '%' \| pbcopy"<cr>
 
 " = VUNDLE > SETUP ===============================
 " :PluginInstall  - install vundles
@@ -51,6 +50,37 @@ set cindent
 Plugin 'wejrowski/vim-codeschool'
 color codeschool
 syntax enable "Fixes terminal color issue
+
+" Plugin 'stulzer/heroku-colorscheme'
+Plugin 'DAddYE/soda.vim'
+" create a toggler plugin for ooptions like this?
+
+function ToggleTheme()
+  if !exists("w:my_theme") || w:my_theme == 0
+    let w:my_theme = 1
+    set colorcolumn=0
+    set cursorcolumn!
+    noremap j gj
+    noremap k gk
+    set relativenumber!
+    set wrap
+    set linebreak
+    set nolist  " list disables linebreak
+    color soda
+  else
+    let w:my_theme = 0
+    set colorcolumn=80
+    set cursorcolumn
+    noremap gj j
+    noremap gk k
+    set relativenumber
+    set wrap!
+    set linebreak!
+    set list  " list disables linebreak
+    color codeschool
+  endif
+endfunction
+noremap <leader>T :call ToggleTheme()<cr>
 
 " Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
 
@@ -399,4 +429,4 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 nnoremap <leader>W :%s/\ \s*$//g
 
 "Fix Air encoding NerdTree issue
-let g:NERDTreeDirArrows=0
+
