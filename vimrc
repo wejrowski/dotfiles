@@ -1,6 +1,11 @@
 let mapleader = " "
 
-" copy filename " nnoremap <Leader>C :!echo '%' \| pbcopy"<cr>
+" nnoremap <Leader>u :exec ':!node scripts/setup.js upload ' . expand('%')<CR>
+" nnoremap <Leader>t :exec ':!node scripts/setup.js run' . expand('%')<CR>
+" nnoremap <Leader>tt :exec ':!node scripts/setup.js run '<CR>
+"
+" copy filename
+" nnoremap <Leader>C :!echo '%' \| pbcopy"<cr>
 
 " = VUNDLE > SETUP ===============================
 " :PluginInstall  - install vundles
@@ -51,6 +56,8 @@ Plugin 'wejrowski/vim-codeschool'
 color codeschool
 syntax enable "Fixes terminal color issue
 
+" Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
+
 " Plugin 'stulzer/heroku-colorscheme'
 Plugin 'DAddYE/soda.vim'
 " create a toggler plugin for ooptions like this?
@@ -83,7 +90,6 @@ endfunction
 noremap <leader>T :call ToggleTheme()<cr>
 
 " Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
-
 Plugin 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss = 1
 Plugin 'jelera/vim-javascript-syntax'
@@ -198,6 +204,7 @@ nnoremap <Leader>Ta :exec ':!zeus test'<CR>
 filetype plugin indent on " Required for vundle
 
 "= GENERAL SETTINGS ==============================
+nnoremap Q <nop>
 set splitbelow
 set splitright
 set relativenumber
@@ -231,6 +238,11 @@ set undodir=~/.vim/undo
 
 " With tmux, create bash alias: alias vim="reattach-to-user-namespace vim"
 " and brew install reattach-to-user-namespace
+
+" path auto completion (see :help compl-filename)
+inoremap <C-L> <C-X><C-F>
+" TODO: this ruins ctrl+p and silver search
+" set autochdir " allow for relative directory auto completion
 
 " Clear search underlines
 nnoremap <leader>S :nohlsearch<CR>
@@ -429,4 +441,18 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 nnoremap <leader>W :%s/\ \s*$//g
 
 "Fix Air encoding NerdTree issue
+let g:NERDTreeDirArrows=0
 
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'benekastah/neomake'
+
+call plug#end()
+
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    \ }
+let g:neomake_javascript_enabled_makers = ['jshint']
