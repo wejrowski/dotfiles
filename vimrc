@@ -104,22 +104,23 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 
-Plug 'scrooloose/syntastic'            " Syntax error help
+Plug 'benekastah/neomake' " Async syntastic
+autocmd! BufWritePost * Neomake
 
-let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_mode_map = { 'mode': 'active',
-                            \ 'active_filetypes': ['python', 'javascript'],
-                            \ 'passive_filetypes': [] }
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:neomake_html_tidy_exec = 'tidy5'
+let g:neomake_mode_map = { 'mode': 'active',
+                         \ 'active_filetypes': ['python', 'javascript'],
+                         \ 'passive_filetypes': [] }
+let g:neomake_loc_list_height = 5
+let g:neomake_auto_loc_list = 0
+let g:neomake_check_on_open = 1
+let g:neomake_check_on_wq = 1
+let g:neomake_javascript_checkers = ['eslint']
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+let g:neomake_error_symbol = '❌'
+let g:neomake_style_error_symbol = '⁉️'
+let g:neomake_warning_symbol = '⚠️'
+let g:neomake_style_warning_symbol = '💩'
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
@@ -470,15 +471,7 @@ nnoremap <leader>W :%s/\ \s*$//g
 "Fix Air encoding NerdTree issue
 let g:NERDTreeDirArrows=0
 
-Plug 'benekastah/neomake'
-
 call plug#end()
-
-let g:neomake_javascript_jshint_maker = {
-    \ 'args': ['--verbose'],
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    \ }
-let g:neomake_javascript_enabled_makers = ['jshint']
 
 colorscheme OceanicNext
 " colorscheme gruvbox
