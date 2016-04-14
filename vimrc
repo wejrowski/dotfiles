@@ -12,54 +12,62 @@ let mapleader = " "
 " :h vundle - for help
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Plugin 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/vundle'
 
 " = VUNDLE > NAVIGATING ==========================
-Plugin 'kien/ctrlp.vim'
-Plugin 'JazzCore/ctrlp-cmatcher'
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_max_files=100000
+set rtp+=~/.fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+map <c-p> :FZF<cr>
+" Plug 'kien/ctrlp.vim'
+" Plug 'JazzCore/ctrlp-cmatcher'
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+" let g:ctrlp_clear_cache_on_exit=0
+" let g:ctrlp_max_files=100000
 set wildignore+=*build/iPhone*,*.jar,*.class,*target
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 map <leader>f :NERDTreeFind<CR>
-Plugin 'schickling/vim-bufonly' "Additional buffer helpers
-Plugin 'jlanzarotta/bufexplorer'
+Plug 'schickling/vim-bufonly' "Additional buffer helpers
+Plug 'jlanzarotta/bufexplorer'
 let NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.DS_STORE']
 let g:NERDTreeWinPos = "left"
 
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 nnoremap <leader>a :Ag!<space>
 
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
-Plugin 'vim-scripts/ctags.vim' " make sure to brew install ctags
+Plug 'vim-scripts/ctags.vim' " make sure to brew install ctags
 " open ctags link in new tab
 nmap <Leader>] <C-w><C-]><C-w>T
 
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 "= JAVA ==========================================
-" Plugin 'tpope/vim-classpath'
-Plugin 'vim-scripts/groovy.vim'
+" Plug 'tpope/vim-classpath'
+Plug 'vim-scripts/groovy.vim'
 set autoindent
 set cindent
 
 
 " = VUNDLE > COLORS / SYNTAX HELP ================
-Plugin 'wejrowski/vim-codeschool'
-color codeschool
-syntax enable "Fixes terminal color issue
+syntax enable
+set t_co=256
+let g:gruvbox_termcolors=16
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=0
+" $NVIM_TUI_ENABLE_TRUE_COLOR
+Plug 'wejrowski/vim-codeschool'
+Plug 'ianks/gruvbox'
+Plug 'mhartington/oceanic-next'
 
-" Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
+" Plug 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
 
-" Plugin 'stulzer/heroku-colorscheme'
-Plugin 'DAddYE/soda.vim'
+" Plug 'stulzer/heroku-colorscheme'
+Plug 'DAddYE/soda.vim'
 " create a toggler plugin for ooptions like this?
 
 function ToggleTheme()
@@ -89,31 +97,50 @@ function ToggleTheme()
 endfunction
 noremap <leader>T :call ToggleTheme()<cr>
 
-" Plugin 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
-Plugin 'pangloss/vim-javascript'
+" Plug 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
+Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss = 1
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
-Plugin 'scrooloose/syntastic'            " Syntax error help
+Plug 'scrooloose/syntastic'            " Syntax error help
+
 let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_mode_map = { 'mode': 'active',
+                            \ 'active_filetypes': ['python', 'javascript'],
+                            \ 'passive_filetypes': [] }
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
 
-Plugin 'othree/html5.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-haml'
+Plug 'pangloss/vim-javascript'
 
 au BufNewFile,BufRead *.scss,*.sass,*.styl syntax cluster sassCssAttributes add=@cssColors
-Plugin 'leafgarland/typescript-vim'
-Plugin 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+Plug 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd BufNewFile,BufRead Gruntfile set filetype=javascript
 autocmd BufNewFile,BufRead *.ts set filetype=javascript
 
 " = VUNDLE > SHORTCUTS/HELPERS ===================
 nnoremap <leader>C :!echo '%' \| pbcopy<CR>
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 map <leader>c gcc<esc>
 " Simple single line comments since commentary does not support this
 " nnoremap <leader>/ :<c-u>execute "normal! I//\ "<cr>
@@ -128,36 +155,36 @@ vnoremap <leader>/ :call CommentToggle()<CR>
 
 
 
-Plugin 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
-Plugin 'tmhedberg/matchit'               " Required for rubyblock
-Plugin 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
+Plug 'kana/vim-textobj-user'           " vim-textobj-rubyblock dependency
+Plug 'tmhedberg/matchit'               " Required for rubyblock
+Plug 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
 
-Plugin 'tpope/vim-endwise'               " auto end ruby blocks
-Plugin 'groenewege/vim-markdown-preview'
-Plugin 'kshenoy/vim-signature'           " Marker visuals
-Plugin 'tpope/vim-fugitive'              " GIT - Gblame etc.
-Plugin 'tpope/vim-surround'              " manipulate surrounding characters
-Plugin 'godlygeek/tabular'               " pretty indents/formatting
+Plug 'tpope/vim-endwise'               " auto end ruby blocks
+Plug 'groenewege/vim-markdown-preview'
+Plug 'kshenoy/vim-signature'           " Marker visuals
+Plug 'tpope/vim-fugitive'              " GIT - Gblame etc.
+Plug 'tpope/vim-surround'              " manipulate surrounding characters
+Plug 'godlygeek/tabular'               " pretty indents/formatting
 
-Plugin 'junegunn/vim-easy-align'         " pretty align/indent with keys
+Plug 'junegunn/vim-easy-align'         " pretty align/indent with keys
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-Plugin 'mattn/webapi-vim'                " Needed for mattn/gist-vim
-Plugin 'mattn/gist-vim'                  " Create/edit gists in vim
+Plug 'mattn/webapi-vim'                " Needed for mattn/gist-vim
+Plug 'mattn/gist-vim'                  " Create/edit gists in vim
 
 com! JSON %!python -m json.tool
 
 " SnipMate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 
 " VUNDLE > TESTING
-Plugin 'thoughtbot/vim-rspec'
-" Plugin 'skwp/vim-rspec'
+Plug 'thoughtbot/vim-rspec'
+" Plug 'skwp/vim-rspec'
 " If using mvim
 " let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/os_x_terminal 'zeus rspec {spec}'"
 " let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
@@ -199,7 +226,7 @@ nnoremap <Leader>Ts :exec ':!zeus test ' . expand('%') . ':' . line('.')<CR>
 nnoremap <Leader>Ta :exec ':!zeus test'<CR>
 
 
-" Plugin 'taylor/vim-zoomwin'
+" Plug 'taylor/vim-zoomwin'
 
 filetype plugin indent on " Required for vundle
 
@@ -443,10 +470,6 @@ nnoremap <leader>W :%s/\ \s*$//g
 "Fix Air encoding NerdTree issue
 let g:NERDTreeDirArrows=0
 
-
-
-call plug#begin('~/.vim/plugged')
-
 Plug 'benekastah/neomake'
 
 call plug#end()
@@ -456,3 +479,8 @@ let g:neomake_javascript_jshint_maker = {
     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
     \ }
 let g:neomake_javascript_enabled_makers = ['jshint']
+
+colorscheme OceanicNext
+" colorscheme gruvbox
+" color codeschool
+set background=dark
