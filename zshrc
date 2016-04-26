@@ -37,6 +37,8 @@ alias rs="rvmsudo rails s -p 80"
 
 # vim colors in tmux. c.f. http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 
+# source ~/.bin/tmuxinator.zsh
+
 # GIT
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gd='git diff'
@@ -117,3 +119,8 @@ function git_clean {
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #   . $(brew --prefix)/etc/bash_completion
 # fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/brent.wejrowski/.gvm/bin/gvm-init.sh" ]] && source "/Users/brent.wejrowski/.gvm/bin/gvm-init.sh"

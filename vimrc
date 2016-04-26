@@ -1,5 +1,9 @@
 let mapleader = " "
 
+" nnoremap <Leader>u :exec ':!node scripts/setup.js upload ' . expand('%')<CR>
+" nnoremap <Leader>t :exec ':!node scripts/setup.js run' . expand('%')<CR>
+" nnoremap <Leader>tt :exec ':!node scripts/setup.js run '<CR>
+"
 " copy filename
 " nnoremap <Leader>C :!echo '%' \| pbcopy"<cr>
 
@@ -168,6 +172,7 @@ nnoremap <Leader>Ta :exec ':!zeus test'<CR>
 filetype plugin indent on " Required for vundle
 
 "= GENERAL SETTINGS ==============================
+nnoremap Q <nop>
 set splitbelow
 set splitright
 set relativenumber
@@ -201,6 +206,11 @@ set undodir=~/.vim/undo
 
 " With tmux, create bash alias: alias vim="reattach-to-user-namespace vim"
 " and brew install reattach-to-user-namespace
+
+" path auto completion (see :help compl-filename)
+inoremap <C-L> <C-X><C-F>
+" TODO: this ruins ctrl+p and silver search
+" set autochdir " allow for relative directory auto completion
 
 " Clear search underlines
 nnoremap <leader>S :nohlsearch<CR>
@@ -400,3 +410,17 @@ nnoremap <leader>W :%s/\ \s*$//g
 
 "Fix Air encoding NerdTree issue
 let g:NERDTreeDirArrows=0
+
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'benekastah/neomake'
+
+call plug#end()
+
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    \ }
+let g:neomake_javascript_enabled_makers = ['jshint']
