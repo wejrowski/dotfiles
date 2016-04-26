@@ -346,8 +346,7 @@ nnoremap <leader>sl :source ~/.vimsession<cr>
 " Git shortcuts
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :!clear && git log -p %<cr>
-nnoremap <leader>gd :!clear && git diff %<cr>
-
+nnoremap <leader>gd :tabnew %<bar>te git diff %<cr>
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap

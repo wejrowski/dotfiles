@@ -33,6 +33,7 @@ alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias rvmcur="rvm info | grep GEM_HOME"
 alias rs="rvmsudo rails s -p 80"
+alias v=nvim
 # alias vim="reattach-to-user-namespace vim" # fix tmux clipboard issue
 
 # vim colors in tmux. c.f. http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
@@ -117,3 +118,46 @@ function git_clean {
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #   . $(brew --prefix)/etc/bash_completion
 # fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export TERM="xterm-256color"
+
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
+# POWERLEVEL9K_STATUS_VERBOSE=false
+# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+# source  ~/projects/powerlevel9k/powerlevel9k.zsh-theme
+
+PROMPT_SUCCESS_COLOR=$FG[117]
+PROMPT_FAILURE_COLOR=$FG[124]
+PROMPT_VCS_INFO_COLOR=$FG[242]
+PROMPT_PROMPT=$FG[077]
+GIT_DIRTY_COLOR=$FG[009]
+GIT_CLEAN_COLOR=$FG[118]
+GIT_PROMPT_INFO=$FG[003]
+
+# SEGMENT_SEPARATOR="\ue0b0"
+
+# robby:
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+# PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+##
+# PROMPT='%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}%{$PROMPT_PROMPT%}ᐅ%{$reset_color%} '
+BW_FILE_COLOR=$FG[245]
+
+PROMPT='${ret_status}% %{$BW_FILE_COLOR%}%c%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info) %{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}%{$PROMPT_PROMPT%}%{$reset_color%} '
+
+#RPS1="${return_code}"
+
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$GIT_PROMPT_INFO%})"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$GIT_DIRTY_COLOR%}✘"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$GIT_CLEAN_COLOR%}✔"
+
+ZSH_THEME_GIT_PROMPT_ADDED="%{$FG[082]%}✚%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$FG[166]%}✹%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$FG[160]%}✖%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$FG[220]%}➜%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$FG[082]%}═%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$FG[190]%}✭%{$reset_color%}"
