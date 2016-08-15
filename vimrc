@@ -40,11 +40,9 @@ nnoremap <leader>a :Ag!<space>
 
 Plug 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
-Plug 'vim-scripts/ctags.vim' " make sure to brew install ctags
+" NOT SURE IF conflicting with snippets Plug 'vim-scripts/ctags.vim' " make sure to brew install ctags
 " open ctags link in new tab
 nmap <Leader>] <C-w><C-]><C-w>T
-
-Plug 'ervandew/supertab'
 
 "= JAVA ==========================================
 " Plug 'tpope/vim-classpath'
@@ -108,14 +106,25 @@ Plug 'benekastah/neomake' " Async syntastic
 autocmd! BufWritePost * Neomake
 
 let g:neomake_html_tidy_exec = 'tidy5'
-let g:neomake_mode_map = { 'mode': 'active',
-                         \ 'active_filetypes': ['python', 'javascript'],
-                         \ 'passive_filetypes': [] }
+" let g:neomake_mode_map = { 'mode': 'active',
+"                        \ 'active_filetypes': ['python', 'javascript'],
+"                        \ 'passive_filetypes': [] }
 let g:neomake_loc_list_height = 5
 let g:neomake_auto_loc_list = 0
 let g:neomake_check_on_open = 1
 let g:neomake_check_on_wq = 1
-let g:neomake_javascript_checkers = ['eslint']
+" _checker is syntastic, _maker is neomake (g:neomake_{language}_{makername}_maker)
+" There are defaults which work for JS but you have to copy this over to use
+" in html (https://github.com/neomake/neomake/blob/master/autoload/neomake/makers/ft/javascript.vim)
+let g:neomake_html_eslint_maker = {
+        \ 'args': ['-f', 'compact'],
+        \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
+        \ '%W%f: line %l\, col %c\, Warning - %m'
+        \ }
+let g:neomake_html_enabled_makers = ['eslint']
+
+" let g:neomake_javascript_eslint_maker = {} " This is already default configured in neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 let g:neomake_error_symbol = '❌'
 let g:neomake_style_error_symbol = '⁉️'
@@ -178,10 +187,41 @@ Plug 'mattn/gist-vim'                  " Create/edit gists in vim
 
 com! JSON %!python -m json.tool
 
-" SnipMate
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+" Plug 'Valloric/YouCompleteMe'
+
+Plug 'ervandew/supertab' " needed for auto complete etc
+
+" DEOPLETE autocomplete
+" - requires - brew install python3
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+let g:deoplete#enable_at_startup = 1
+" Use deoplete.
+" let g:SuperTabDefaultCompletionType = "<c-n>" " Make the tabing on completion menu go from top to bottom
+" let g:SuperTabClosePreviewOnPopupClose = 1 " Close the preview when completion ends
+" let g:deoplete#enable_smart_case = 1
+
+" ULTISNIPS
+Plug 'SirVer/ultisnips' " neovim snippets
+" Snippets are separated from the ultisnips engine.
+
+Plug 'honza/vim-snippets'
+" ctrl+tab to see snippets
+let g:python_host_prog = '/usr/local/bin/python2.7'
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit='vertical'
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-s>" " ctrl + s
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Plug 'garbas/vim-snipmate'
 
 " VUNDLE > TESTING
 Plug 'thoughtbot/vim-rspec'
@@ -346,7 +386,12 @@ nnoremap <leader>sl :source ~/.vimsession<cr>
 " Git shortcuts
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :!clear && git log -p %<cr>
-nnoremap <leader>gd :tabnew %<bar>te git diff %<cr>
+nnoremap <leader>gd :-tabnew %<bar>te git diff %<cr>
+
+" open terminal tab
+nnoremap <leader>t :-tabnew %<bar>te 
+
+
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set commentstring=<!--%s-->
 autocmd FileType markdown set wrap
