@@ -7,25 +7,19 @@ Rake install and you've got my VIM and bash setup. I keep general shortcuts and 
 
 **Homebrew** http://mxcl.github.com/homebrew/
 
-**Macvim** brew install (gives me the mvim command)
+brew install postgres
+brew install ctags
+brew install neovim/neovim/neovim
+brew install hub
 
-```terminal
-$ brew install macvim --override-system-vim
-```
-
-**Hub** https://github.com/defunkt/hub
-```terminal
-$ brew install hub
-```
-
-**ctags**
-```terminal
-$ brew install ctags
-```
+Neovim Plug: https://github.com/junegunn/vim-plug
 
 
 ## Resources
 
+* https://github.com/junegunn/vim-plug
+* https://github.com/ggreer/the_silver_searcher
+  * brew install the_silver_searcher
 * https://github.com/carlhuda/janus
 * https://github.com/ryanb/dotfiles
 * http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/
@@ -46,7 +40,6 @@ $ brew install ctags
   * http://7h2o.com/index.php/posts/stackoverflow-alfred-workflow
 * **Dash** http://kapeli.com/dash
 * **LiveReload** http://livereload.com
-* **Tower** http://www.git-tower.com
 * **Transmit** https://panic.com/transmit
 * **CyberDuck** http://cyberduck.io
 * **SequelPro** http://www.sequelpro.com
