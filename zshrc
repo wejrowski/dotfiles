@@ -17,6 +17,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source ~/.bash_profile # Where I keep personal alias' etc.
 
+# source ~/.gvm/scripts/gvm
+# 8.0_25 for BE/Alex
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home"
+# u40 + for erie
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 eval "$(hub alias -s)"
@@ -57,6 +63,7 @@ alias server="echo 'ruby -run -e httpd . -p 5000'; ruby -run -e httpd . -p 5000"
 function cdgem {
   cd /opt/local/lib/ruby/gems/1.8/gems/; cd `ls|grep $1|sort|tail -1`
 }
+
 
 # CODA - Open current dir in Coda.. or open given file
 alias opencoda='osascript -e "tell application \"Coda\"" -e "tell document 1" -e "change local path \"${PWD}\"" -e "end tell" -e "end tell"'
@@ -161,3 +168,13 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{$FG[160]%}✖%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$FG[220]%}➜%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$FG[082]%}═%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$FG[190]%}✭%{$reset_color%}"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/brent.wejrowski/.sdkman"
+[[ -s "/Users/brent.wejrowski/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/brent.wejrowski/.sdkman/bin/sdkman-init.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/brent.wejrowski/Desktop/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/brent.wejrowski/Desktop/google-cloud-sdk/completion.zsh.inc'
