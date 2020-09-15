@@ -132,16 +132,27 @@ Plug 'DAddYE/soda.vim'
 
 function ToggleTheme()
   if !exists("w:my_theme") || w:my_theme == 0
-    let w:my_theme = 1
-    set colorcolumn=0
-    set cursorcolumn!
-    noremap j gj
-    noremap k gk
-    set relativenumber!
-    set wrap
-    set linebreak
-    set nolist  " list disables linebreak
-    color soda
+    " let w:my_theme = 1
+    " set colorcolumn=0
+    " set cursorcolumn!
+    " noremap j gj
+    " noremap k gk
+    " set relativenumber!
+    " set wrap
+    " set linebreak
+    " set nolist  " list disables linebreak
+    " color soda
+
+    let w:my_theme = 0
+    set colorcolumn=80
+    set cursorcolumn
+    noremap gj j
+    noremap gk k
+    "set relativenumber!
+    set wrap!
+    set linebreak!
+    set list  " list disables linebreak
+    color codeschool
   else
     let w:my_theme = 0
     set colorcolumn=80
