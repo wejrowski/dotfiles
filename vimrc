@@ -15,6 +15,62 @@ filetype off
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/vundle'
 
+" ====== R FOR VIM ==============================
+" # Nvim-R
+" \rf               " Connect to R console.
+" \rq               " Quit R console.
+" \ro               " Open object bowser.
+" \d                " Execute current line of code and move to the next line.
+" \ss               " Execute a block of selected code.
+" \aa               " Execute the entire script. This is equivalent to source().
+" \xx               " Toggle comment in an R script.
+
+" via https://gist.github.com/rohitfarmer/68cdadeaeeb196e8a6ecdebdee6e76a5
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+nnoremap <leader><CR> :call SendLineToR("stay")<CR><Down> 
+"inoremap <leader> <Esc>:call SendLineToR("stay")<CR><Down><Home>i
+"vmap <leader><CR>:call SendLineToR("stay")<CR><Down>i
+
+"
+Plug 'ncm2/ncm2'
+set completeopt=noinsert,menuone,noselect " :help Ncm2PopupOpen for more
+
+Plug 'roxma/nvim-yarp'
+Plug 'jalvesaq/Nvim-R'
+" Async autocomplete for R, relies on nvimm-R
+Plug 'gaalcaras/ncm-R'
+
+" Vim 8 only
+if !has('nvim')
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" Optional: for snippet support
+" Further configuration might be required, read below
+Plug 'SirVer/ultisnips'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'lervag/vimtex'
+" E121: Undefined variable: latex
+" E15: Invalid expression: latex
+" vimtex: g:tex_flavor not specified
+        " Please read :help vimtex-tex-flavor!
+
+let g:tex_flavor='latex'
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" Optional: better Rnoweb support (LaTeX completion)
+" Plug 'lervag/vimtex'
+
+let R_in_buffer=0
+let R_external_term = 'tilix -a session-add-right -e'
+
+set noro " Not sure why R is using no write
+" ==== END R FOR VIM ==============================
+
+
+
+
 " = VUNDLE > NAVIGATING ==========================
 set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
