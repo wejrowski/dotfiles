@@ -459,8 +459,7 @@ nnoremap <leader>sl :source ~/.vimsession<cr>
 " Git shortcuts
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :!clear && git log -p %<cr>
-" nnoremap <leader>gd :-tabnew %<bar>te git diff %<cr>
-nnoremap <leader>gd :!git diff<cr>
+nnoremap <leader>gd :Git diff<cr>
 
 " open terminal tab
 nnoremap <leader>t :-tabnew %<bar>te 
