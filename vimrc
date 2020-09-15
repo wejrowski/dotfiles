@@ -96,6 +96,12 @@ nnoremap <leader>a :Ag!<space>
 
 Plug 'Lokaltog/vim-easymotion'
 nnoremap s <Plug>(easymotion-s2)
+
+" TAGS
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+let g:easytags_events = ['BufWritePost']
+
 " NOT SURE IF conflicting with snippets Plug 'vim-scripts/ctags.vim' " make sure to brew install ctags
 " open ctags link in new tab
 nmap <Leader>] <C-w><C-]><C-w>T
