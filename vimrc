@@ -248,7 +248,17 @@ Plug 'nelstrom/vim-textobj-rubyblock'  " Selecting ruby blocks
 Plug 'tpope/vim-endwise'               " auto end ruby blocks
 Plug 'groenewege/vim-markdown-preview'
 Plug 'kshenoy/vim-signature'           " Marker visuals
+
+" GIT
 Plug 'tpope/vim-fugitive'              " GIT - Gblame etc.
+Plug 'mhinz/vim-signify'               " Left side git marks
+Plug 'junegunn/gv.vim'                 " pretty glog
+" Git shortcuts
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gl :GV<cr>
+nnoremap <leader>gd :Git diff<cr>
+
+
 Plug 'tpope/vim-surround'              " manipulate surrounding characters
 Plug 'godlygeek/tabular'               " pretty indents/formatting
 
@@ -455,11 +465,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Save and load sessions (mks=mksession)
 nnoremap <leader>ss :mks! ~/.vimsession<cr>
 nnoremap <leader>sl :source ~/.vimsession<cr>
-
-" Git shortcuts
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gl :!clear && git log -p %<cr>
-nnoremap <leader>gd :Git diff<cr>
 
 " open terminal tab
 nnoremap <leader>t :-tabnew %<bar>te 
