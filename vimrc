@@ -77,8 +77,10 @@ Plug 'alvan/vim-closetag'
 
 " = VUNDLE > NAVIGATING ==========================
 set rtp+=~/.fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 map <c-p> :FZF<cr>
+
 " Plug 'kien/ctrlp.vim'
 " Plug 'JazzCore/ctrlp-cmatcher'
 " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
