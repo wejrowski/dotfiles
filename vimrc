@@ -71,6 +71,8 @@ set noro " Not sure why R is using no write
 " ==== END R FOR VIM ==============================
 
 
+" Remember you can open newline when pressing double >>
+Plug 'alvan/vim-closetag'
 
 
 " = VUNDLE > NAVIGATING ==========================
