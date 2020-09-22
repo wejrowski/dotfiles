@@ -1,3 +1,5 @@
+" NOTE: PlugClean to remove old plugs
+
 let mapleader = " "
 
 " nnoremap <Leader>u :exec ':!node scripts/setup.js upload ' . expand('%')<CR>
