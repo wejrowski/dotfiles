@@ -266,7 +266,7 @@ Plug 'junegunn/gv.vim'                 " pretty glog
 " Git shortcuts
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gl :GV<cr>
-nnoremap <leader>gd :Git diff<cr>
+nnoremap <leader>gd :Gdiffsplit<cr>
 
 
 Plug 'tpope/vim-surround'              " manipulate surrounding characters
