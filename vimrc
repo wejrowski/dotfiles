@@ -174,6 +174,10 @@ function ToggleTheme()
 endfunction
 noremap <leader>T :call ToggleTheme()<cr>
 
+
+autocmd BufNewFile,BufRead *.ejs set filetype=html
+Plug 'nikvdp/ejs-syntax'
+
 " Plug 'ap/vim-css-color' " THIS PLUGIN CAUSES LAG
 Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss = 1
