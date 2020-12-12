@@ -76,7 +76,9 @@ Plug 'alvan/vim-closetag'
 
 
 " = VUNDLE > NAVIGATING ==========================
-set rtp+=~/.fzf
+" set rtp+=~/.fzf "OLD
+set rtp+=/usr/local/opt/fzf " with homebrew install
+
 Plug 'junegunn/fzf.vim'
 
 map <c-p> :FZF<cr>
